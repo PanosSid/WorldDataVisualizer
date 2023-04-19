@@ -1,0 +1,27 @@
+db: world_data
+
+table: countries
+country_id(ISO_Code),ISO,ISO3,FIPS,Display_Name,Official_Name,Area_SqKm,Population
+
+table: birth_death_growth_rates
+country_id,year,crude_birth_rate,crude_death_rate,net_migration,rate_natural_increase,growth_rate
+
+table: age_specific_fertility_rates
+country_id,year,fertility_rate_15_19,fertility_rate_20_24,fertility_rate_25_29,fertility_rate_30_34,fertility_rate_35_39,fertility_rate_40_44,fertility_rate_45_49,total_fertility_rate,gross_reproduction_rate,sex_ratio_at_birth
+
+table: midyear_population
+country_id,year,midyear_pop,midyear_pop_male,midyear_pop_female
+
+table: midyear_population_age_5yr
+country_id,year,sex,age_0_4,age_5_9,age_10_14,...,age_95_99,age_100_plus
+
+table: midyear_population_age_specific
+country_id,year,sex,max_age,population_age_0,population_age_1,...,population_age_99,population_age_100
+
+table: mortality_life_expectancy
+country_id,year,infant_mortality,infant_mortality_male,infant_mortality_female,life_expectancy,life_expectancy_male,life_expectancy_female,mortality_rate_under5,mortality_rate_under5_male,mortality_rate_under5_female,mortality_rate_1to4,mortality_rate_1to4_male,mortality_rate_1to4_female
+
+# economic metrics tables 
+for each of the 9 economic metrics :
+    table: <metric_name>
+    country_id,year,metric_value 
