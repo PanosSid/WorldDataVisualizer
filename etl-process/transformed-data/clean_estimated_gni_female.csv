@@ -1,0 +1,985 @@
+ISO_Code,Country,year,Estimated GNI female
+4,Afghanistan,1995,692
+4,Afghanistan,2000,445
+4,Afghanistan,2005,665
+4,Afghanistan,2010,963
+4,Afghanistan,2015,1050.8
+4,Afghanistan,2018,1104.3
+8,Albania,1995,3032
+8,Albania,2000,3865
+8,Albania,2005,5321
+8,Albania,2010,7446
+8,Albania,2015,8381.2
+8,Albania,2018,9463.0
+12,Algeria,1995,1820
+12,Algeria,2000,2063
+12,Algeria,2005,2738
+12,Algeria,2010,3654
+12,Algeria,2015,4049.8
+12,Algeria,2018,4127.7
+24,Angola,1995,2424
+24,Angola,2000,2621
+24,Angola,2005,3828
+24,Angola,2010,4922
+24,Angola,2015,5274.4
+24,Angola,2018,4970.0
+32,Argentina,1995,9107
+32,Argentina,2000,9352
+32,Argentina,2005,8684
+32,Argentina,2010,12214
+32,Argentina,2015,12647.8
+32,Argentina,2018,12390.3
+51,Armenia,1995,1574
+51,Armenia,2000,1766
+51,Armenia,2005,3511
+51,Armenia,2010,4344
+51,Armenia,2015,5542.2
+51,Armenia,2018,6072.0
+36,Australia,1995,21060
+36,Australia,2000,25310
+36,Australia,2005,28355
+36,Australia,2010,31708
+36,Australia,2015,33615.0
+36,Australia,2018,35616.3
+40,Austria,1995,23695
+40,Austria,2000,24132
+40,Austria,2005,26373
+40,Austria,2010,33291
+40,Austria,2015,31347.2
+40,Austria,2018,31984.0
+31,Azerbaijan,1995,2625
+31,Azerbaijan,2000,3430
+31,Azerbaijan,2005,4456
+31,Azerbaijan,2010,10466
+31,Azerbaijan,2015,10194.8
+31,Azerbaijan,2018,9837.0
+44,Bahamas,1995,24513
+44,Bahamas,2000,25827
+44,Bahamas,2005,25458
+44,Bahamas,2010,23499
+44,Bahamas,2015,23491.0
+44,Bahamas,2018,22552.3
+48,Bahrain,1995,19977
+48,Bahrain,2000,21799
+48,Bahrain,2005,25514
+48,Bahrain,2010,27568
+48,Bahrain,2015,19095.2
+48,Bahrain,2018,18822.7
+50,Bangladesh,1995,533
+50,Bangladesh,2000,650
+50,Bangladesh,2005,813
+50,Bangladesh,2010,1223
+50,Bangladesh,2015,1604.8
+50,Bangladesh,2018,2198.0
+52,Barbados,1995,10174
+52,Barbados,2000,11827
+52,Barbados,2005,12334
+52,Barbados,2010,13366
+52,Barbados,2015,13219.8
+52,Barbados,2018,13669.0
+112,Belarus,1995,4353
+112,Belarus,2000,6196
+112,Belarus,2005,9168
+112,Belarus,2010,12850
+112,Belarus,2015,13483.2
+112,Belarus,2018,13499.7
+56,Belgium,1995,22625
+56,Belgium,2000,27009
+56,Belgium,2005,29283
+56,Belgium,2010,32583
+56,Belgium,2015,32568.6
+56,Belgium,2018,34337.0
+84,Belize,1995,2907
+84,Belize,2000,3428
+84,Belize,2005,4213
+84,Belize,2010,4794
+84,Belize,2015,5446.4
+84,Belize,2018,5685.3
+204,Benin,1995,1052
+204,Benin,2000,1271
+204,Benin,2005,1406
+204,Benin,2010,1588
+204,Benin,2015,1654.6
+204,Benin,2018,1798.7
+64,Bhutan,1995,1678
+64,Bhutan,2000,2493
+64,Bhutan,2005,3397
+64,Bhutan,2010,5036
+64,Bhutan,2015,5470.2
+64,Bhutan,2018,6231.7
+68,Bolivia (Plurinational State of),1995,2779
+68,Bolivia (Plurinational State of),2000,3052
+68,Bolivia (Plurinational State of),2005,3272
+68,Bolivia (Plurinational State of),2010,3555
+68,Bolivia (Plurinational State of),2015,4033.8
+68,Bolivia (Plurinational State of),2018,4819.7
+70,Bosnia and Herzegovina,1995,1057
+70,Bosnia and Herzegovina,2000,4634
+70,Bosnia and Herzegovina,2005,5655
+70,Bosnia and Herzegovina,2010,6691
+70,Bosnia and Herzegovina,2015,7213.4
+70,Bosnia and Herzegovina,2018,8113.3
+72,Botswana,1995,7052
+72,Botswana,2000,7834
+72,Botswana,2005,7906
+72,Botswana,2010,10824
+72,Botswana,2015,13221.4
+72,Botswana,2018,13863.7
+76,Brazil,1995,7409
+76,Brazil,2000,7814
+76,Brazil,2005,9796
+76,Brazil,2010,10876
+76,Brazil,2015,12179.2
+76,Brazil,2018,10328.0
+96,Brunei Darussalam,1995,53203
+96,Brunei Darussalam,2000,56916
+96,Brunei Darussalam,2005,58788
+96,Brunei Darussalam,2010,59977
+96,Brunei Darussalam,2015,65927.2
+96,Brunei Darussalam,2018,65982.7
+100,Bulgaria,1995,6699
+100,Bulgaria,2000,6605
+100,Bulgaria,2005,9992
+100,Bulgaria,2010,11942
+100,Bulgaria,2015,12659.8
+100,Bulgaria,2018,14913.3
+854,Burkina Faso,1995,706
+854,Burkina Faso,2000,815
+854,Burkina Faso,2005,921
+854,Burkina Faso,2010,1056
+854,Burkina Faso,2015,1167.2
+854,Burkina Faso,2018,1287.3
+108,Burundi,1995,727
+108,Burundi,2000,643
+108,Burundi,2005,601
+108,Burundi,2010,670
+108,Burundi,2015,858.8
+108,Burundi,2018,777.7
+132,Cabo Verde,1995,1557
+132,Cabo Verde,2000,2602
+132,Cabo Verde,2005,3310
+132,Cabo Verde,2010,4489
+132,Cabo Verde,2015,4728.4
+132,Cabo Verde,2018,5223.0
+116,Cambodia,1995,920
+116,Cambodia,2000,1405
+116,Cambodia,2005,1567
+116,Cambodia,2010,2056
+116,Cambodia,2015,2391.8
+116,Cambodia,2018,2978.0
+120,Cameroon,1995,1819
+120,Cameroon,2000,1971
+120,Cameroon,2005,2218
+120,Cameroon,2010,2347
+120,Cameroon,2015,2487.6
+120,Cameroon,2018,2696.3
+124,Canada,1995,22372
+124,Canada,2000,26805
+124,Canada,2005,30528
+124,Canada,2010,31599
+124,Canada,2015,33337.0
+124,Canada,2018,34802.0
+140,Central African Republic,1995,685
+140,Central African Republic,2000,653
+140,Central African Republic,2005,648
+140,Central African Republic,2010,796
+140,Central African Republic,2015,664.0
+140,Central African Republic,2018,603.7
+148,Chad,1995,791
+148,Chad,2000,741
+148,Chad,2005,1147
+148,Chad,2010,1465
+148,Chad,2015,1524.2
+148,Chad,2018,1413.0
+152,Chile,1995,6175
+152,Chile,2000,7743
+152,Chile,2005,9421
+152,Chile,2010,11768
+152,Chile,2015,13915.2
+152,Chile,2018,14980.7
+156,China,1995,1973
+156,China,2000,2855
+156,China,2005,4383
+156,China,2010,7511
+156,China,2015,9409.8
+156,China,2018,11980.7
+170,Colombia,1995,5629
+170,Colombia,2000,5894
+170,Colombia,2005,6366
+170,Colombia,2010,8243
+170,Colombia,2015,9450.2
+170,Colombia,2018,10289.0
+174,Comoros,1995,1430
+174,Comoros,2000,1485
+174,Comoros,2005,1562
+174,Comoros,2010,1748
+174,Comoros,2015,1831.2
+174,Comoros,2018,1849.3
+178,Congo,1995,3287
+178,Congo,2000,2943
+178,Congo,2005,2460
+178,Congo,2010,3483
+178,Congo,2015,4694.6
+178,Congo,2018,5332.3
+188,Costa Rica,1995,4773
+188,Costa Rica,2000,5553
+188,Costa Rica,2005,7576
+188,Costa Rica,2010,8910
+188,Costa Rica,2015,9997.4
+188,Costa Rica,2018,10395.3
+191,Croatia,1995,8988
+191,Croatia,2000,12295
+191,Croatia,2005,16223
+191,Croatia,2010,16853
+191,Croatia,2015,16799.2
+191,Croatia,2018,18721.3
+192,Cuba,1995,1891
+192,Cuba,2000,2308
+192,Cuba,2005,3074
+192,Cuba,2010,4347
+192,Cuba,2015,4685.4
+192,Cuba,2018,4982.0
+196,Cyprus,1995,15907
+196,Cyprus,2000,18387
+196,Cyprus,2005,22665
+196,Cyprus,2010,26014
+196,Cyprus,2015,24915.6
+196,Cyprus,2018,27018.3
+203,Czechia,1995,13864
+203,Czechia,2000,15197
+203,Czechia,2005,17835
+203,Czechia,2010,18774
+203,Czechia,2015,20218.4
+203,Czechia,2018,23172.3
+208,Denmark,1995,27635
+208,Denmark,2000,32357
+208,Denmark,2005,35323
+208,Denmark,2010,36962
+208,Denmark,2015,38662.0
+208,Denmark,2018,40578.7
+262,Djibouti,1995,1204
+262,Djibouti,2000,1145
+262,Djibouti,2005,1350
+262,Djibouti,2010,1907
+262,Djibouti,2015,2249.4
+262,Djibouti,2018,2814.7
+214,Dominican Republic,1995,3250
+214,Dominican Republic,2000,4493
+214,Dominican Republic,2005,5360
+214,Dominican Republic,2010,7194
+214,Dominican Republic,2015,8427.2
+214,Dominican Republic,2018,10607.7
+218,Ecuador,1995,4649
+218,Ecuador,2000,4403
+218,Ecuador,2005,5305
+218,Ecuador,2010,6155
+218,Ecuador,2015,6951.6
+218,Ecuador,2018,7336.7
+818,Egypt,1995,2465
+818,Egypt,2000,2587
+818,Egypt,2005,2911
+818,Egypt,2010,3630
+818,Egypt,2015,4381.2
+818,Egypt,2018,4267.7
+222,El Salvador,1995,3153
+222,El Salvador,2000,3592
+222,El Salvador,2005,3822
+222,El Salvador,2010,4733
+222,El Salvador,2015,5078.4
+222,El Salvador,2018,5176.0
+226,Equatorial Guinea,1995,1318
+226,Equatorial Guinea,2000,6502
+226,Equatorial Guinea,2005,14636
+226,Equatorial Guinea,2010,15601
+226,Equatorial Guinea,2015,16725.0
+226,Equatorial Guinea,2018,14078.7
+232,Eritrea,1995,1675
+232,Eritrea,2000,1900
+232,Eritrea,2005,1788
+232,Eritrea,2010,1591
+232,Eritrea,2015,1397.4
+232,Eritrea,2018,1371.0
+233,Estonia,1995,8672
+233,Estonia,2000,11784
+233,Estonia,2005,17473
+233,Estonia,2010,16564
+233,Estonia,2015,19249.0
+233,Estonia,2018,22070.7
+231,Ethiopia,1995,418
+231,Ethiopia,2000,466
+231,Ethiopia,2005,498
+231,Ethiopia,2010,784
+231,Ethiopia,2015,974.6
+231,Ethiopia,2018,1270.7
+242,Fiji,1995,3354
+242,Fiji,2000,3583
+242,Fiji,2005,4611
+242,Fiji,2010,4933
+242,Fiji,2015,5302.2
+242,Fiji,2018,5627.0
+246,Finland,1995,21034
+246,Finland,2000,27419
+246,Finland,2005,31554
+246,Finland,2010,34074
+246,Finland,2015,33350.0
+246,Finland,2018,34568.0
+250,France,1995,22557
+250,France,2000,25753
+250,France,2005,27908
+250,France,2010,30509
+250,France,2015,31328.4
+250,France,2018,32424.7
+266,Gabon,1995,12225
+266,Gabon,2000,10363
+266,Gabon,2005,10786
+266,Gabon,2010,9639
+266,Gabon,2015,10903.8
+266,Gabon,2018,11436.3
+270,Gambia,1995,879
+270,Gambia,2000,957
+270,Gambia,2005,980
+270,Gambia,2010,781
+270,Gambia,2015,753.2
+270,Gambia,2018,776.0
+268,Georgia,1995,1379
+268,Georgia,2000,2409
+268,Georgia,2005,3046
+268,Georgia,2010,4287
+268,Georgia,2015,5411.6
+268,Georgia,2018,6224.7
+276,Germany,1995,23450
+276,Germany,2000,26237
+276,Germany,2005,28085
+276,Germany,2010,32532
+276,Germany,2015,35355.0
+276,Germany,2018,37878.0
+288,Ghana,1995,1645
+288,Ghana,2000,1803
+288,Ghana,2005,2048
+288,Ghana,2010,2513
+288,Ghana,2015,2934.8
+288,Ghana,2018,3156.7
+300,Greece,1995,12938
+300,Greece,2000,15947
+300,Greece,2005,21216
+300,Greece,2010,21332
+300,Greece,2015,18938.8
+300,Greece,2018,19493.3
+320,Guatemala,1995,2961
+320,Guatemala,2000,3632
+320,Guatemala,2005,3866
+320,Guatemala,2010,4138
+320,Guatemala,2015,4507.6
+320,Guatemala,2018,4802.0
+324,Guinea,1995,1112
+324,Guinea,2000,1179
+324,Guinea,2005,1150
+324,Guinea,2010,1290
+324,Guinea,2015,1431.2
+324,Guinea,2018,1801.3
+624,Guinea-Bissau,1995,1205
+624,Guinea-Bissau,2000,1040
+624,Guinea-Bissau,2005,1039
+624,Guinea-Bissau,2010,1157
+624,Guinea-Bissau,2015,1202.8
+624,Guinea-Bissau,2018,1293.7
+328,Guyana,1995,1838
+328,Guyana,2000,2225
+328,Guyana,2005,2306
+328,Guyana,2010,3286
+328,Guyana,2015,3947.4
+328,Guyana,2018,4573.7
+332,Haiti,1995,1288
+332,Haiti,2000,1383
+332,Haiti,2005,1227
+332,Haiti,2010,1241
+332,Haiti,2015,1352.4
+332,Haiti,2018,1387.3
+340,Honduras,1995,1742
+340,Honduras,2000,1808
+340,Honduras,2005,2494
+340,Honduras,2010,2835
+340,Honduras,2015,2780.6
+340,Honduras,2018,3118.7
+348,Hungary,1995,10828
+348,Hungary,2000,12823
+348,Hungary,2005,17208
+348,Hungary,2010,17023
+348,Hungary,2015,17861.6
+348,Hungary,2018,20117.3
+352,Iceland,1995,22545
+352,Iceland,2000,27185
+352,Iceland,2005,31165
+352,Iceland,2010,26613
+352,Iceland,2015,32085.6
+352,Iceland,2018,38338.0
+356,India,1995,928
+356,India,2000,1147
+356,India,2005,1514
+356,India,2010,1783
+356,India,2015,1918.8
+356,India,2018,2483.0
+360,Indonesia,1995,3638
+360,Indonesia,2000,3201
+360,Indonesia,2005,3806
+360,Indonesia,2010,5343
+360,Indonesia,2015,6188.0
+360,Indonesia,2018,7341.0
+364,Iran (Islamic Republic of),1995,2317
+364,Iran (Islamic Republic of),2000,3280
+364,Iran (Islamic Republic of),2005,5068
+364,Iran (Islamic Republic of),2010,5568
+364,Iran (Islamic Republic of),2015,4955.4
+364,Iran (Islamic Republic of),2018,6012.0
+368,Iraq,1995,1029
+368,Iraq,2000,2166
+368,Iraq,2005,2375
+368,Iraq,2010,3166
+368,Iraq,2015,3504.6
+368,Iraq,2018,3796.3
+372,Ireland,1995,14920
+372,Ireland,2000,22984
+372,Ireland,2005,28411
+372,Ireland,2010,28563
+372,Ireland,2015,31418.2
+372,Ireland,2018,42743.3
+376,Israel,1995,16602
+376,Israel,2000,18719
+376,Israel,2005,20232
+376,Israel,2010,20877
+376,Israel,2015,22666.4
+376,Israel,2018,24136.3
+380,Italy,1995,19365
+380,Italy,2000,22536
+380,Italy,2005,24415
+380,Italy,2010,25977
+380,Italy,2015,25219.8
+380,Italy,2018,25926.3
+388,Jamaica,1995,6046
+388,Jamaica,2000,5533
+388,Jamaica,2005,5832
+388,Jamaica,2010,5999
+388,Jamaica,2015,6136.2
+388,Jamaica,2018,6248.0
+392,Japan,1995,21638
+392,Japan,2000,22743
+392,Japan,2005,24495
+392,Japan,2010,23821
+392,Japan,2015,25613.6
+392,Japan,2018,28205.7
+400,Jordan,1995,1457
+400,Jordan,2000,1711
+400,Jordan,2005,2058
+400,Jordan,2010,2812
+400,Jordan,2015,2572.4
+400,Jordan,2018,2715.7
+398,Kazakhstan,1995,6998
+398,Kazakhstan,2000,7090
+398,Kazakhstan,2005,10957
+398,Kazakhstan,2010,13428
+398,Kazakhstan,2015,15669.2
+398,Kazakhstan,2018,16424.0
+404,Kenya,1995,1748
+404,Kenya,2000,1737
+404,Kenya,2005,1740
+404,Kenya,2010,2020
+404,Kenya,2015,2211.8
+404,Kenya,2018,2532.0
+414,Kuwait,1995,48503
+414,Kuwait,2000,43795
+414,Kuwait,2005,53496
+414,Kuwait,2010,48287
+414,Kuwait,2015,51490.0
+414,Kuwait,2018,50150.7
+417,Kyrgyzstan,1995,1217
+417,Kyrgyzstan,2000,1421
+417,Kyrgyzstan,2005,1597
+417,Kyrgyzstan,2010,1769
+417,Kyrgyzstan,2015,1925.6
+417,Kyrgyzstan,2018,2126.7
+418,Lao People's Democratic Republic,1995,1755
+418,Lao People's Democratic Republic,2000,2076
+418,Lao People's Democratic Republic,2005,2629
+418,Lao People's Democratic Republic,2010,3152
+418,Lao People's Democratic Republic,2015,3845.0
+418,Lao People's Democratic Republic,2018,4793.3
+428,Latvia,1995,6311
+428,Latvia,2000,8466
+428,Latvia,2005,13274
+428,Latvia,2010,15476
+428,Latvia,2015,17659.4
+428,Latvia,2018,20722.0
+422,Lebanon,1995,3731
+422,Lebanon,2000,4031
+422,Lebanon,2005,3605
+422,Lebanon,2010,5683
+422,Lebanon,2015,5211.2
+422,Lebanon,2018,4775.7
+426,Lesotho,1995,1604
+426,Lesotho,2000,1676
+426,Lesotho,2005,1948
+426,Lesotho,2010,2471
+426,Lesotho,2015,2528.8
+426,Lesotho,2018,2666.0
+430,Liberia,1995,204
+430,Liberia,2000,993
+430,Liberia,2005,721
+430,Liberia,2010,1007
+430,Liberia,2015,1129.2
+430,Liberia,2018,1081.0
+434,Libya,1995,5540
+434,Libya,2000,6192
+434,Libya,2005,7876
+434,Libya,2010,10744
+434,Libya,2015,5269.0
+434,Libya,2018,4399.0
+440,Lithuania,1995,7055
+440,Lithuania,2000,9531
+440,Lithuania,2005,14327
+440,Lithuania,2010,17894
+440,Lithuania,2015,20848.4
+440,Lithuania,2018,24400.7
+442,Luxembourg,1995,39151
+442,Luxembourg,2000,52078
+442,Luxembourg,2005,59206
+442,Luxembourg,2010,54237
+442,Luxembourg,2015,50077.0
+442,Luxembourg,2018,51637.3
+450,Madagascar,1995,1113
+450,Madagascar,2000,1182
+450,Madagascar,2005,1142
+450,Madagascar,2010,1105
+450,Madagascar,2015,1067.4
+450,Madagascar,2018,1092.7
+454,Malawi,1995,685
+454,Malawi,2000,735
+454,Malawi,2005,715
+454,Malawi,2010,896
+454,Malawi,2015,874.6
+454,Malawi,2018,914.7
+458,Malaysia,1995,8414
+458,Malaysia,2000,9020
+458,Malaysia,2005,10522
+458,Malaysia,2010,14205
+458,Malaysia,2015,16864.2
+458,Malaysia,2018,20144.7
+462,Maldives,1995,3318
+462,Maldives,2000,5338
+462,Maldives,2005,4966
+462,Maldives,2010,6093
+462,Maldives,2015,6709.6
+462,Maldives,2018,7173.7
+466,Mali,1995,959
+466,Mali,2000,1078
+466,Mali,2005,1259
+466,Mali,2010,1364
+466,Mali,2015,1100.4
+466,Mali,2018,1297.0
+470,Malta,1995,8967
+470,Malta,2000,11973
+470,Malta,2005,12689
+470,Malta,2010,15238
+470,Malta,2015,19222.4
+470,Malta,2018,24009.3
+478,Mauritania,1995,1298
+478,Mauritania,2000,1380
+478,Mauritania,2005,1556
+478,Mauritania,2010,1759
+478,Mauritania,2015,1858.2
+478,Mauritania,2018,1981.7
+480,Mauritius,1995,4860
+480,Mauritius,2000,6223
+480,Mauritius,2005,7460
+480,Mauritius,2010,9031
+480,Mauritius,2015,11243.0
+480,Mauritius,2018,13636.3
+484,Mexico,1995,6907
+484,Mexico,2000,8869
+484,Mexico,2005,9460
+484,Mexico,2010,10061
+484,Mexico,2015,10677.2
+484,Mexico,2018,11171.0
+496,Mongolia,1995,3203
+496,Mongolia,2000,4027
+496,Mongolia,2005,4904
+496,Mongolia,2010,5852
+496,Mongolia,2015,8149.2
+496,Mongolia,2018,9252.3
+504,Morocco,1995,1448
+504,Morocco,2000,1767
+504,Morocco,2005,2291
+504,Morocco,2010,2803
+504,Morocco,2015,2943.8
+504,Morocco,2018,2972.3
+508,Mozambique,1995,340
+508,Mozambique,2000,510
+508,Mozambique,2005,655
+508,Mozambique,2010,838
+508,Mozambique,2015,956.8
+508,Mozambique,2018,1023.3
+104,Myanmar,1995,639
+104,Myanmar,2000,894
+104,Myanmar,2005,1526
+104,Myanmar,2010,2556
+104,Myanmar,2015,2922.2
+104,Myanmar,2018,3435.0
+516,Namibia,1995,4672
+516,Namibia,2000,4942
+516,Namibia,2005,5926
+516,Namibia,2010,7009
+516,Namibia,2015,8317.6
+516,Namibia,2018,9076.7
+524,Nepal,1995,1092
+524,Nepal,2000,1076
+524,Nepal,2005,1306
+524,Nepal,2010,1598
+524,Nepal,2015,1787.8
+524,Nepal,2018,2018.3
+528,Netherlands,1995,24227
+528,Netherlands,2000,31823
+528,Netherlands,2005,34300
+528,Netherlands,2010,36913
+528,Netherlands,2015,37539.6
+528,Netherlands,2018,39408.7
+554,New Zealand,1995,17585
+554,New Zealand,2000,19967
+554,New Zealand,2005,23004
+554,New Zealand,2010,22713
+554,New Zealand,2015,24421.4
+554,New Zealand,2018,26485.7
+558,Nicaragua,1995,1245
+558,Nicaragua,2000,1701
+558,Nicaragua,2005,2155
+558,Nicaragua,2010,2197
+558,Nicaragua,2015,3083.0
+558,Nicaragua,2018,4352.0
+566,Nigeria,1995,2074
+566,Nigeria,2000,2066
+566,Nigeria,2005,2822
+566,Nigeria,2010,3969
+566,Nigeria,2015,4409.6
+566,Nigeria,2018,4409.3
+578,Norway,1995,38399
+578,Norway,2000,44906
+578,Norway,2005,50499
+578,Norway,2010,55320
+578,Norway,2015,57035.6
+578,Norway,2018,59692.3
+512,Oman,1995,9164
+512,Oman,2000,13399
+512,Oman,2005,13262
+512,Oman,2010,14225
+512,Oman,2015,12621.0
+512,Oman,2018,11860.7
+586,Pakistan,1995,658
+586,Pakistan,2000,629
+586,Pakistan,2005,913
+586,Pakistan,2010,1262
+586,Pakistan,2015,1332.8
+586,Pakistan,2018,1520.7
+591,Panama,1995,6105
+591,Panama,2000,7232
+591,Panama,2005,7987
+591,Panama,2010,10245
+591,Panama,2015,12959.6
+591,Panama,2018,15636.0
+598,Papua New Guinea,1995,2386
+598,Papua New Guinea,2000,2073
+598,Papua New Guinea,2005,2050
+598,Papua New Guinea,2010,2496
+598,Papua New Guinea,2015,2786.8
+598,Papua New Guinea,2018,3311.0
+600,Paraguay,1995,5236
+600,Paraguay,2000,4087
+600,Paraguay,2005,4589
+600,Paraguay,2010,6081
+600,Paraguay,2015,7120.4
+600,Paraguay,2018,8041.7
+604,Peru,1995,3894
+604,Peru,2000,4029
+604,Peru,2005,4718
+604,Peru,2010,6463
+604,Peru,2015,7687.2
+604,Peru,2018,8658.7
+608,Philippines,1995,3008
+608,Philippines,2000,3679
+608,Philippines,2005,4391
+608,Philippines,2010,5240
+608,Philippines,2015,5904.4
+608,Philippines,2018,7261.0
+616,Poland,1995,8359
+616,Poland,2000,11088
+616,Poland,2005,12532
+616,Poland,2010,16683
+616,Poland,2015,18120.4
+616,Poland,2018,20825.3
+620,Portugal,1995,15828
+620,Portugal,2000,18898
+620,Portugal,2005,21081
+620,Portugal,2010,22354
+620,Portugal,2015,21362.8
+620,Portugal,2018,23067.3
+634,Qatar,1995,27886
+634,Qatar,2000,45709
+634,Qatar,2005,36864
+634,Qatar,2010,41815
+634,Qatar,2015,53479.4
+634,Qatar,2018,58428.0
+642,Romania,1995,8061
+642,Romania,2000,8006
+642,Romania,2005,11247
+642,Romania,2010,13699
+642,Romania,2015,15345.6
+642,Romania,2018,18427.0
+643,Russian Federation,1995,9777
+643,Russian Federation,2000,10738
+643,Russian Federation,2005,15014
+643,Russian Federation,2010,18251
+643,Russian Federation,2015,19436.4
+643,Russian Federation,2018,19571.0
+646,Rwanda,1995,591
+646,Rwanda,2000,686
+646,Rwanda,2005,909
+646,Rwanda,2010,1248
+646,Rwanda,2015,1372.4
+646,Rwanda,2018,1623.7
+662,Saint Lucia,1995,6059
+662,Saint Lucia,2000,6650
+662,Saint Lucia,2005,7112
+662,Saint Lucia,2010,8685
+662,Saint Lucia,2015,8847.8
+662,Saint Lucia,2018,9030.3
+670,Saint Vincent and the Grenadines,1995,4002
+670,Saint Vincent and the Grenadines,2000,4501
+670,Saint Vincent and the Grenadines,2005,6011
+670,Saint Vincent and the Grenadines,2010,6965
+670,Saint Vincent and the Grenadines,2015,7562.4
+670,Saint Vincent and the Grenadines,2018,8528.7
+882,Samoa,1995,1819
+882,Samoa,2000,2257
+882,Samoa,2005,3054
+882,Samoa,2010,3713
+882,Samoa,2015,3703.6
+882,Samoa,2018,3931.7
+678,Sao Tome and Principe,1995,942
+678,Sao Tome and Principe,2000,985
+678,Sao Tome and Principe,2005,1265
+678,Sao Tome and Principe,2010,1633
+678,Sao Tome and Principe,2015,1714.0
+678,Sao Tome and Principe,2018,1898.7
+682,Saudi Arabia,1995,9243
+682,Saudi Arabia,2000,10299
+682,Saudi Arabia,2005,13991
+682,Saudi Arabia,2010,14358
+682,Saudi Arabia,2015,17842.8
+682,Saudi Arabia,2018,18375.7
+686,Senegal,1995,1104
+686,Senegal,2000,1270
+686,Senegal,2005,1477
+686,Senegal,2010,1699
+686,Senegal,2015,1802.4
+686,Senegal,2018,2088.7
+688,Serbia,1995,5191
+688,Serbia,2000,5628
+688,Serbia,2005,7576
+688,Serbia,2010,11024
+688,Serbia,2015,10923.6
+688,Serbia,2018,11950.3
+694,Sierra Leone,1995,758
+694,Sierra Leone,2000,756
+694,Sierra Leone,2005,895
+694,Sierra Leone,2010,1089
+694,Sierra Leone,2015,1307.4
+694,Sierra Leone,2018,1185.0
+702,Singapore,1995,29558
+702,Singapore,2000,34833
+702,Singapore,2005,40351
+702,Singapore,2010,54468
+702,Singapore,2015,66329.6
+702,Singapore,2018,72391.0
+703,Slovakia,1995,9760
+703,Slovakia,2000,11639
+703,Slovakia,2005,14549
+703,Slovakia,2010,18461
+703,Slovakia,2015,19617.6
+703,Slovakia,2018,22827.3
+705,Slovenia,1995,14176
+705,Slovenia,2000,17326
+705,Slovenia,2005,23681
+705,Slovenia,2010,24905
+705,Slovenia,2015,24519.8
+705,Slovenia,2018,27490.3
+90,Solomon Islands,1995,1091
+90,Solomon Islands,2000,1344
+90,Solomon Islands,2005,1255
+90,Solomon Islands,2010,1065
+90,Solomon Islands,2015,1440.0
+90,Solomon Islands,2018,1542.0
+710,South Africa,1995,6414
+710,South Africa,2000,7133
+710,South Africa,2005,7981
+710,South Africa,2010,8818
+710,South Africa,2015,9220.4
+710,South Africa,2018,9080.3
+724,Spain,1995,15336
+724,Spain,2000,19245
+724,Spain,2005,22545
+724,Spain,2010,24192
+724,Spain,2015,24136.8
+724,Spain,2018,27396.0
+144,Sri Lanka,1995,2366
+144,Sri Lanka,2000,2938
+144,Sri Lanka,2005,3688
+144,Sri Lanka,2010,4678
+144,Sri Lanka,2015,5738.2
+144,Sri Lanka,2018,6590.3
+729,Sudan,1995,807
+729,Sudan,2000,929
+729,Sudan,2005,1025
+729,Sudan,2010,1290
+729,Sudan,2015,1500.6
+729,Sudan,2018,1778.7
+740,Suriname,1995,5166
+740,Suriname,2000,5267
+740,Suriname,2005,7012
+740,Suriname,2010,9130
+740,Suriname,2015,9820.4
+740,Suriname,2018,8074.7
+752,Sweden,1995,25225
+752,Sweden,2000,29658
+752,Sweden,2005,33562
+752,Sweden,2010,36632
+752,Sweden,2015,38790.0
+752,Sweden,2018,41352.7
+756,Switzerland,1995,33472
+756,Switzerland,2000,39563
+756,Switzerland,2005,43361
+756,Switzerland,2010,45863
+756,Switzerland,2015,47144.4
+756,Switzerland,2018,48345.3
+760,Syrian Arab Republic,1995,1622
+760,Syrian Arab Republic,2000,1481
+760,Syrian Arab Republic,2005,1474
+760,Syrian Arab Republic,2010,1551
+760,Syrian Arab Republic,2015,952.8
+760,Syrian Arab Republic,2018,637.7
+762,Tajikistan,1995,806
+762,Tajikistan,2000,759
+762,Tajikistan,2005,1124
+762,Tajikistan,2010,878
+762,Tajikistan,2015,957.0
+762,Tajikistan,2018,997.3
+764,Thailand,1995,6976
+764,Thailand,2000,6913
+764,Thailand,2005,8444
+764,Thailand,2010,10895
+764,Thailand,2015,12267.2
+764,Thailand,2018,13815.0
+626,Timor-Leste,1995,3066
+626,Timor-Leste,2000,2764
+626,Timor-Leste,2005,955
+626,Timor-Leste,2010,5268
+626,Timor-Leste,2015,3577.2
+626,Timor-Leste,2018,5603.3
+768,Togo,1995,975
+768,Togo,2000,1057
+768,Togo,2005,990
+768,Togo,2010,990
+768,Togo,2015,1102.8
+768,Togo,2018,1180.7
+776,Tonga,1995,2709
+776,Tonga,2000,2783
+776,Tonga,2005,3266
+776,Tonga,2010,3444
+776,Tonga,2015,3516.4
+776,Tonga,2018,3870.7
+780,Trinidad and Tobago,1995,7420
+780,Trinidad and Tobago,2000,10758
+780,Trinidad and Tobago,2005,17544
+780,Trinidad and Tobago,2010,23133
+780,Trinidad and Tobago,2015,22836.4
+780,Trinidad and Tobago,2018,22433.7
+788,Tunisia,1995,2231
+788,Tunisia,2000,2910
+788,Tunisia,2005,3539
+788,Tunisia,2010,4485
+788,Tunisia,2015,4591.6
+788,Tunisia,2018,4718.7
+792,Turkey,1995,5704
+792,Turkey,2000,6006
+792,Turkey,2005,6638
+792,Turkey,2010,10245
+792,Turkey,2015,12844.4
+792,Turkey,2018,15481.3
+795,Turkmenistan,1995,3218
+795,Turkmenistan,2000,3493
+795,Turkmenistan,2005,4230
+795,Turkmenistan,2010,6595
+795,Turkmenistan,2015,8707.6
+795,Turkmenistan,2018,11315.0
+800,Uganda,1995,708
+800,Uganda,2000,824
+800,Uganda,2005,971
+800,Uganda,2010,1117
+800,Uganda,2015,1202.2
+800,Uganda,2018,1259.3
+804,Ukraine,1995,3941
+804,Ukraine,2000,3445
+804,Ukraine,2005,5317
+804,Ukraine,2010,6010
+804,Ukraine,2015,6086.0
+804,Ukraine,2018,5884.7
+784,United Arab Emirates,1995,28376
+784,United Arab Emirates,2000,31054
+784,United Arab Emirates,2005,29495
+784,United Arab Emirates,2010,18427
+784,United Arab Emirates,2015,20435.2
+784,United Arab Emirates,2018,23823.7
+858,Uruguay,1995,7633
+858,Uruguay,2000,9041
+858,Uruguay,2005,9015
+858,Uruguay,2010,11850
+858,Uruguay,2015,13239.6
+858,Uruguay,2018,14819.3
+860,Uzbekistan,1995,1566
+860,Uzbekistan,2000,1742
+860,Uzbekistan,2005,2170
+860,Uzbekistan,2010,3185
+860,Uzbekistan,2015,3813.0
+860,Uzbekistan,2018,4476.3
+548,Vanuatu,1995,1780
+548,Vanuatu,2000,1973
+548,Vanuatu,2005,1786
+548,Vanuatu,2010,2214
+548,Vanuatu,2015,2161.0
+548,Vanuatu,2018,2167.3
+862,Venezuela (Bolivarian Republic of),1995,9264
+862,Venezuela (Bolivarian Republic of),2000,9010
+862,Venezuela (Bolivarian Republic of),2005,9617
+862,Venezuela (Bolivarian Republic of),2010,12756
+862,Venezuela (Bolivarian Republic of),2015,12742.2
+862,Venezuela (Bolivarian Republic of),2018,7940.3
+704,Viet Nam,1995,1601
+704,Viet Nam,2000,2240
+704,Viet Nam,2005,3034
+704,Viet Nam,2010,3766
+704,Viet Nam,2015,4429.4
+704,Viet Nam,2018,5464.7
+887,Yemen,1995,552
+887,Yemen,2000,970
+887,Yemen,2005,842
+887,Yemen,2010,808
+887,Yemen,2015,511.8
+887,Yemen,2018,196.0
+894,Zambia,1995,1534
+894,Zambia,2000,1636
+894,Zambia,2005,1858
+894,Zambia,2010,2580
+894,Zambia,2015,2910.2
+894,Zambia,2018,3010.3
+716,Zimbabwe,1995,2003
+716,Zimbabwe,2000,2143
+716,Zimbabwe,2005,1484
+716,Zimbabwe,2010,1443
+716,Zimbabwe,2015,1837.6
+716,Zimbabwe,2018,2062.7

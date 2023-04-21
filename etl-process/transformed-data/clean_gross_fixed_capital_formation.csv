@@ -1,0 +1,624 @@
+ISO_Code,Country,year,Gross fixed capital formation
+8,Albania,1990,30.4
+8,Albania,1995,21.3
+8,Albania,2000,31.9
+8,Albania,2005,37.9
+8,Albania,2010,28.4
+8,Albania,2015,26.1
+8,Albania,2018,24.4
+32,Argentina,1990,14
+32,Argentina,1995,17.9
+32,Argentina,2000,16.2
+32,Argentina,2005,17.4
+32,Argentina,2010,16.6
+32,Argentina,2015,16.2
+32,Argentina,2018,14.6
+51,Armenia,1990,44.3
+51,Armenia,1995,16.2
+51,Armenia,2000,18.4
+51,Armenia,2005,29.8
+51,Armenia,2010,30
+51,Armenia,2015,22.2
+51,Armenia,2018,17.2
+36,Australia,1990,27.7
+36,Australia,1995,25.2
+36,Australia,2000,26
+36,Australia,2005,27.1
+36,Australia,2010,27.1
+36,Australia,2015,26.9
+36,Australia,2018,24.5
+40,Austria,1990,25.4
+40,Austria,1995,25.3
+40,Austria,2000,25.6
+40,Austria,2005,23.1
+40,Austria,2010,21.6
+40,Austria,2015,22.7
+40,Austria,2018,23.6
+31,Azerbaijan,1990,20.3
+31,Azerbaijan,1995,15.6
+31,Azerbaijan,2000,23.1
+31,Azerbaijan,2005,41.3
+31,Azerbaijan,2010,18.2
+31,Azerbaijan,2015,24.7
+31,Azerbaijan,2018,23.1
+48,Bahrain,1990,18.9
+48,Bahrain,1995,17.3
+48,Bahrain,2000,16.4
+48,Bahrain,2005,25.7
+48,Bahrain,2010,26
+48,Bahrain,2015,24.5
+48,Bahrain,2018,26.5
+50,Bangladesh,1990,16.5
+50,Bangladesh,1995,19.1
+50,Bangladesh,2000,23.8
+50,Bangladesh,2005,25.8
+50,Bangladesh,2010,26.2
+50,Bangladesh,2015,28.3
+50,Bangladesh,2018,30.5
+112,Belarus,1990,21.9
+112,Belarus,1995,24.7
+112,Belarus,2000,25.2
+112,Belarus,2005,26.5
+112,Belarus,2010,37.9
+112,Belarus,2015,34.0
+112,Belarus,2018,25.8
+56,Belgium,1990,24.1
+56,Belgium,1995,21.3
+56,Belgium,2000,22.5
+56,Belgium,2005,22.2
+56,Belgium,2010,21.8
+56,Belgium,2015,22.7
+56,Belgium,2018,23.6
+204,Benin,1990,12.6
+204,Benin,1995,17.6
+204,Benin,2000,24.6
+204,Benin,2005,19.7
+204,Benin,2010,23.3
+204,Benin,2015,25.5
+204,Benin,2018,26.3
+68,Bolivia (Plurinational State of),1990,12.6
+68,Bolivia (Plurinational State of),1995,15.5
+68,Bolivia (Plurinational State of),2000,17.9
+68,Bolivia (Plurinational State of),2005,13
+68,Bolivia (Plurinational State of),2010,16.6
+68,Bolivia (Plurinational State of),2015,19.8
+68,Bolivia (Plurinational State of),2018,20.7
+72,Botswana,1990,32.4
+72,Botswana,1995,27
+72,Botswana,2000,25.1
+72,Botswana,2005,25.3
+72,Botswana,2010,33.6
+72,Botswana,2015,33.2
+72,Botswana,2018,30.1
+76,Brazil,1990,20.7
+76,Brazil,1995,20.3
+76,Brazil,2000,18.3
+76,Brazil,2005,17.1
+76,Brazil,2010,20.5
+76,Brazil,2015,20.0
+76,Brazil,2018,15.4
+96,Brunei Darussalam,1990,18.7
+96,Brunei Darussalam,1995,36.7
+96,Brunei Darussalam,2000,13
+96,Brunei Darussalam,2005,11.4
+96,Brunei Darussalam,2010,23.5
+96,Brunei Darussalam,2015,32.1
+96,Brunei Darussalam,2018,36.6
+100,Bulgaria,1990,21.3
+100,Bulgaria,1995,16.8
+100,Bulgaria,2000,16.8
+100,Bulgaria,2005,25.9
+100,Bulgaria,2010,22.2
+100,Bulgaria,2015,21.1
+100,Bulgaria,2018,18.7
+854,Burkina Faso,1990,17.7
+854,Burkina Faso,1995,22.5
+854,Burkina Faso,2000,21.2
+854,Burkina Faso,2005,19.7
+854,Burkina Faso,2010,24.5
+854,Burkina Faso,2015,27.4
+854,Burkina Faso,2018,24.2
+120,Cameroon,1990,17.3
+120,Cameroon,1995,19.8
+120,Cameroon,2000,19.6
+120,Cameroon,2005,21.7
+120,Cameroon,2010,23.5
+120,Cameroon,2015,23.3
+120,Cameroon,2018,22.7
+124,Canada,1990,21.8
+124,Canada,1995,18.4
+124,Canada,2000,19.7
+124,Canada,2005,21.9
+124,Canada,2010,23.5
+124,Canada,2015,24.1
+124,Canada,2018,22.8
+148,Chad,1990,4.8
+148,Chad,1995,14.4
+148,Chad,2000,20.9
+148,Chad,2005,20.6
+148,Chad,2010,33.6
+148,Chad,2015,29.8
+148,Chad,2018,21.7
+152,Chile,1990,24
+152,Chile,1995,25.8
+152,Chile,2000,21
+152,Chile,2005,22.2
+152,Chile,2010,21.6
+152,Chile,2015,24.1
+152,Chile,2018,21.7
+170,Colombia,1990,19.1
+170,Colombia,1995,22.4
+170,Colombia,2000,14.1
+170,Colombia,2005,19.7
+170,Colombia,2010,21
+170,Colombia,2015,22.1
+170,Colombia,2018,21.7
+178,Congo,1990,17.2
+178,Congo,1995,34.3
+178,Congo,2000,20.9
+178,Congo,2005,19.7
+178,Congo,2010,20.3
+178,Congo,2015,32.7
+178,Congo,2018,22.5
+188,Costa Rica,1990,22.4
+188,Costa Rica,1995,19.9
+188,Costa Rica,2000,19.8
+188,Costa Rica,2005,20
+188,Costa Rica,2010,19.7
+188,Costa Rica,2015,19.6
+188,Costa Rica,2018,17.6
+196,Cyprus,1990,24.6
+196,Cyprus,1995,25.2
+196,Cyprus,2000,20.1
+196,Cyprus,2005,21.5
+196,Cyprus,2010,22.3
+196,Cyprus,2015,14.6
+196,Cyprus,2018,19.5
+203,Czechia,1990,24.5
+203,Czechia,1995,33.3
+203,Czechia,2000,30.6
+203,Czechia,2005,28.2
+203,Czechia,2010,26.9
+203,Czechia,2015,25.8
+203,Czechia,2018,25.3
+208,Denmark,1990,20.4
+208,Denmark,1995,19.5
+208,Denmark,2000,21.5
+208,Denmark,2005,21.2
+208,Denmark,2010,18.1
+208,Denmark,2015,19.0
+208,Denmark,2018,21.4
+214,Dominican Republic,1990,23.1
+214,Dominican Republic,1995,17.9
+214,Dominican Republic,2000,25
+214,Dominican Republic,2005,22.6
+214,Dominican Republic,2010,25.2
+214,Dominican Republic,2015,23.4
+214,Dominican Republic,2018,22.5
+218,Ecuador,1990,18.3
+218,Ecuador,1995,17.3
+218,Ecuador,2000,19
+218,Ecuador,2005,20.4
+218,Ecuador,2010,24.6
+218,Ecuador,2015,26.8
+218,Ecuador,2018,25.2
+818,Egypt,1990,27.3
+818,Egypt,1995,22.6
+818,Egypt,2000,18.9
+818,Egypt,2005,17.9
+818,Egypt,2010,19.2
+818,Egypt,2015,14.1
+818,Egypt,2018,15.2
+222,El Salvador,1990,13.7
+222,El Salvador,1995,19.1
+222,El Salvador,2000,17.7
+222,El Salvador,2005,16.3
+222,El Salvador,2010,14.8
+222,El Salvador,2015,16.3
+222,El Salvador,2018,15.9
+246,Finland,1990,29.7
+246,Finland,1995,19.3
+246,Finland,2000,23.1
+246,Finland,2005,23
+246,Finland,2010,21.9
+246,Finland,2015,21.3
+246,Finland,2018,22.1
+250,France,1990,23.4
+250,France,1995,20.1
+250,France,2000,21.5
+250,France,2005,21.8
+250,France,2010,22.1
+250,France,2015,22.0
+250,France,2018,22.4
+268,Georgia,1990,23.3
+268,Georgia,1995,4
+268,Georgia,2000,25.4
+268,Georgia,2005,28.1
+268,Georgia,2010,19.3
+268,Georgia,2015,24.7
+268,Georgia,2018,29.8
+276,Germany,1990,24.4
+276,Germany,1995,23.4
+276,Germany,2000,23
+276,Germany,2005,19.1
+276,Germany,2010,19.4
+276,Germany,2015,20.0
+276,Germany,2018,20.4
+300,Greece,1990,24.8
+300,Greece,1995,20
+300,Greece,2000,24.6
+300,Greece,2005,20.8
+300,Greece,2010,17.6
+300,Greece,2015,12.6
+300,Greece,2018,12.0
+320,Guatemala,1990,13
+320,Guatemala,1995,14.5
+320,Guatemala,2000,16.1
+320,Guatemala,2005,18.3
+320,Guatemala,2010,14.8
+320,Guatemala,2015,14.2
+320,Guatemala,2018,12.3
+324,Guinea,1990,22.9
+324,Guinea,1995,19.9
+324,Guinea,2000,19.6
+324,Guinea,2005,18.6
+324,Guinea,2010,19.1
+324,Guinea,2015,23.8
+324,Guinea,2018,30.6
+624,Guinea-Bissau,1990,29.9
+624,Guinea-Bissau,1995,22.3
+624,Guinea-Bissau,2000,11.6
+624,Guinea-Bissau,2005,10.7
+624,Guinea-Bissau,2010,10.7
+624,Guinea-Bissau,2015,8.2
+624,Guinea-Bissau,2018,9.1
+340,Honduras,1990,19.2
+340,Honduras,1995,26.4
+340,Honduras,2000,25.8
+340,Honduras,2005,24.9
+340,Honduras,2010,21.6
+340,Honduras,2015,23.7
+340,Honduras,2018,23.2
+352,Iceland,1990,21.7
+352,Iceland,1995,17.5
+352,Iceland,2000,24.6
+352,Iceland,2005,29.7
+352,Iceland,2010,14.1
+352,Iceland,2015,16.7
+352,Iceland,2018,21.8
+356,India,1990,25.5
+356,India,1995,25.7
+356,India,2000,24.3
+356,India,2005,32.8
+356,India,2010,33.2
+356,India,2015,31.6
+356,India,2018,28.6
+360,Indonesia,1990,30.6
+360,Indonesia,1995,28.4
+360,Indonesia,2000,19.9
+360,Indonesia,2005,23.6
+360,Indonesia,2010,31
+360,Indonesia,2015,32.3
+360,Indonesia,2018,32.4
+372,Ireland,1990,19.2
+372,Ireland,1995,18.1
+372,Ireland,2000,23.8
+372,Ireland,2005,29.9
+372,Ireland,2010,17.5
+372,Ireland,2015,20.0
+372,Ireland,2018,28.0
+380,Italy,1990,22
+380,Italy,1995,19.1
+380,Italy,2000,20.4
+380,Italy,2005,21.2
+380,Italy,2010,19.9
+380,Italy,2015,17.8
+380,Italy,2018,17.6
+400,Jordan,1990,25.1
+400,Jordan,1995,29.6
+400,Jordan,2000,21.1
+400,Jordan,2005,30.6
+400,Jordan,2010,27.5
+400,Jordan,2015,21.2
+400,Jordan,2018,17.6
+404,Kenya,1990,20.6
+404,Kenya,1995,21.4
+404,Kenya,2000,16.7
+404,Kenya,2005,18.7
+404,Kenya,2010,20.4
+404,Kenya,2015,21.3
+404,Kenya,2018,17.6
+417,Kyrgyzstan,1990,22
+417,Kyrgyzstan,1995,20.4
+417,Kyrgyzstan,2000,18
+417,Kyrgyzstan,2005,16
+417,Kyrgyzstan,2010,27.8
+417,Kyrgyzstan,2015,30.0
+417,Kyrgyzstan,2018,31.5
+422,Lebanon,1990,31.3
+422,Lebanon,1995,36.5
+422,Lebanon,2000,21
+422,Lebanon,2005,22.2
+422,Lebanon,2010,25.3
+422,Lebanon,2015,24.1
+422,Lebanon,2018,19.0
+442,Luxembourg,1990,23.6
+442,Luxembourg,1995,21.7
+442,Luxembourg,2000,20.2
+442,Luxembourg,2005,19.1
+442,Luxembourg,2010,17.6
+442,Luxembourg,2015,19.4
+442,Luxembourg,2018,18.3
+458,Malaysia,1990,33
+458,Malaysia,1995,43.6
+458,Malaysia,2000,25.3
+458,Malaysia,2005,22.3
+458,Malaysia,2010,22.4
+458,Malaysia,2015,25.2
+458,Malaysia,2018,25.1
+466,Mali,1990,17.6
+466,Mali,1995,22.2
+466,Mali,2000,17.7
+466,Mali,2005,20.2
+466,Mali,2010,20.8
+466,Mali,2015,17.3
+466,Mali,2018,19.9
+470,Malta,1990,25.5
+470,Malta,1995,23.9
+470,Malta,2000,22.5
+470,Malta,2005,22
+470,Malta,2010,21.4
+470,Malta,2015,19.1
+470,Malta,2018,20.9
+478,Mauritania,1990,20
+478,Mauritania,1995,20.4
+478,Mauritania,2000,16.2
+478,Mauritania,2005,59
+478,Mauritania,2010,36.5
+478,Mauritania,2015,51.5
+478,Mauritania,2018,54.5
+480,Mauritius,1990,30.6
+480,Mauritius,1995,23.5
+480,Mauritius,2000,22.5
+480,Mauritius,2005,21.5
+480,Mauritius,2010,24.2
+480,Mauritius,2015,20.6
+480,Mauritius,2018,17.8
+484,Mexico,1990,18
+484,Mexico,1995,16.4
+484,Mexico,2000,21.5
+484,Mexico,2005,20.7
+484,Mexico,2010,21.6
+484,Mexico,2015,22.0
+484,Mexico,2018,22.4
+496,Mongolia,1990,27.1
+496,Mongolia,1995,22.9
+496,Mongolia,2000,25.2
+496,Mongolia,2005,27.9
+496,Mongolia,2010,34.5
+496,Mongolia,2015,36.4
+496,Mongolia,2018,24.8
+504,Morocco,1990,25.8
+504,Morocco,1995,24
+504,Morocco,2000,27
+504,Morocco,2005,28.5
+504,Morocco,2010,30.7
+504,Morocco,2015,30.6
+504,Morocco,2018,29.1
+508,Mozambique,1990,22.1
+508,Mozambique,1995,19.6
+508,Mozambique,2000,21.6
+508,Mozambique,2005,13
+508,Mozambique,2010,17.9
+508,Mozambique,2015,34.2
+508,Mozambique,2018,24.3
+516,Namibia,1990,18.5
+516,Namibia,1995,19.9
+516,Namibia,2000,16.9
+516,Namibia,2005,19
+516,Namibia,2010,25.3
+516,Namibia,2015,28.3
+516,Namibia,2018,16.9
+524,Nepal,1990,16.1
+524,Nepal,1995,22.1
+524,Nepal,2000,19.3
+524,Nepal,2005,19.9
+524,Nepal,2010,22.2
+524,Nepal,2015,23.3
+524,Nepal,2018,31.5
+528,Netherlands,1990,22.8
+528,Netherlands,1995,20.9
+528,Netherlands,2000,22.5
+528,Netherlands,2005,20.4
+528,Netherlands,2010,19.7
+528,Netherlands,2015,19.4
+528,Netherlands,2018,20.5
+578,Norway,1990,22.8
+578,Norway,1995,21.4
+578,Norway,2000,19.8
+578,Norway,2005,20.3
+578,Norway,2010,20.7
+578,Norway,2015,23.0
+578,Norway,2018,24.8
+512,Oman,1990,12.3
+512,Oman,1995,15
+512,Oman,2000,15.5
+512,Oman,2005,22
+512,Oman,2010,24
+512,Oman,2015,24.3
+512,Oman,2018,28.5
+586,Pakistan,1990,17.3
+586,Pakistan,1995,17
+586,Pakistan,2000,15.9
+586,Pakistan,2005,17.5
+586,Pakistan,2010,14.2
+586,Pakistan,2015,13.3
+586,Pakistan,2018,14.5
+600,Paraguay,1990,16.8
+600,Paraguay,1995,20
+600,Paraguay,2000,15.4
+600,Paraguay,2005,19.1
+600,Paraguay,2010,21.3
+600,Paraguay,2015,19.7
+600,Paraguay,2018,19.0
+604,Peru,1990,16.2
+604,Peru,1995,24
+604,Peru,2000,19.7
+604,Peru,2005,17.1
+604,Peru,2010,23.5
+604,Peru,2015,24.2
+604,Peru,2018,21.0
+608,Philippines,1990,23.1
+608,Philippines,1995,22.2
+608,Philippines,2000,22.1
+608,Philippines,2005,19.9
+608,Philippines,2010,20.5
+608,Philippines,2015,20.3
+608,Philippines,2018,25.5
+620,Portugal,1990,26.7
+620,Portugal,1995,23.3
+620,Portugal,2000,28
+620,Portugal,2005,23.1
+620,Portugal,2010,20.5
+620,Portugal,2015,15.9
+620,Portugal,2018,16.4
+642,Romania,1990,19.8
+642,Romania,1995,21.2
+642,Romania,2000,19.1
+642,Romania,2005,23.4
+642,Romania,2010,26.1
+642,Romania,2015,25.7
+642,Romania,2018,22.2
+643,Russian Federation,1990,28.7
+643,Russian Federation,1995,21.1
+643,Russian Federation,2000,16.9
+643,Russian Federation,2005,17.8
+643,Russian Federation,2010,21.6
+643,Russian Federation,2015,21.5
+643,Russian Federation,2018,21.9
+646,Rwanda,1990,14.7
+646,Rwanda,1995,13.4
+646,Rwanda,2000,12.8
+646,Rwanda,2005,15.2
+646,Rwanda,2010,22.2
+646,Rwanda,2015,24.6
+646,Rwanda,2018,24.0
+682,Saudi Arabia,1990,18.9
+682,Saudi Arabia,1995,19.2
+682,Saudi Arabia,2000,17.4
+682,Saudi Arabia,2005,19.3
+682,Saudi Arabia,2010,24.4
+682,Saudi Arabia,2015,24.7
+682,Saudi Arabia,2018,23.9
+686,Senegal,1990,18
+686,Senegal,1995,18.9
+686,Senegal,2000,22.4
+686,Senegal,2005,23.3
+686,Senegal,2010,18.4
+686,Senegal,2015,22.0
+686,Senegal,2018,24.1
+702,Singapore,1990,31.7
+702,Singapore,1995,33.2
+702,Singapore,2000,32.3
+702,Singapore,2005,23.2
+702,Singapore,2010,25.6
+702,Singapore,2015,26.9
+702,Singapore,2018,25.5
+703,Slovakia,1990,31.7
+703,Slovakia,1995,26.7
+703,Slovakia,2000,27.3
+703,Slovakia,2005,27.3
+703,Slovakia,2010,22.1
+703,Slovakia,2015,22.2
+703,Slovakia,2018,21.6
+705,Slovenia,1990,20.9
+705,Slovenia,1995,23.2
+705,Slovenia,2000,27.3
+705,Slovenia,2005,26.6
+705,Slovenia,2010,21.3
+705,Slovenia,2015,19.5
+705,Slovenia,2018,18.6
+710,South Africa,1990,20.9
+710,South Africa,1995,17
+710,South Africa,2000,15.6
+710,South Africa,2005,17.2
+710,South Africa,2010,19.3
+710,South Africa,2015,19.9
+710,South Africa,2018,18.8
+724,Spain,1990,25.9
+724,Spain,1995,22
+724,Spain,2000,26.1
+724,Spain,2005,29.9
+724,Spain,2010,23
+724,Spain,2015,19.9
+724,Spain,2018,20.5
+144,Sri Lanka,1990,21.9
+144,Sri Lanka,1995,25.6
+144,Sri Lanka,2000,28
+144,Sri Lanka,2005,23.4
+144,Sri Lanka,2010,23.7
+144,Sri Lanka,2015,27.6
+144,Sri Lanka,2018,26.3
+729,Sudan,1990,10.4
+729,Sudan,1995,5.5
+729,Sudan,2000,18.6
+729,Sudan,2005,23.1
+729,Sudan,2010,20.1
+729,Sudan,2015,17.2
+729,Sudan,2018,18.6
+752,Sweden,1990,29
+752,Sweden,1995,19.6
+752,Sweden,2000,22.2
+752,Sweden,2005,22.2
+752,Sweden,2010,22.3
+752,Sweden,2015,22.9
+752,Sweden,2018,24.8
+756,Switzerland,1990,31.1
+756,Switzerland,1995,25.2
+756,Switzerland,2000,25.3
+756,Switzerland,2005,24.4
+756,Switzerland,2010,22.8
+756,Switzerland,2015,23.7
+756,Switzerland,2018,24.4
+764,Thailand,1990,40.4
+764,Thailand,1995,41.3
+764,Thailand,2000,21.6
+764,Thailand,2005,27.7
+764,Thailand,2010,24
+764,Thailand,2015,25.5
+764,Thailand,2018,23.3
+768,Togo,1990,25.3
+768,Togo,1995,13.6
+768,Togo,2000,12.6
+768,Togo,2005,14.7
+768,Togo,2010,16.7
+768,Togo,2015,22.5
+768,Togo,2018,25.3
+792,Turkey,1990,22.9
+792,Turkey,1995,23.8
+792,Turkey,2000,22.3
+792,Turkey,2005,26.7
+792,Turkey,2010,24.9
+792,Turkey,2015,28.5
+792,Turkey,2018,29.7
+800,Uganda,1990,12.7
+800,Uganda,1995,16.4
+800,Uganda,2000,19.2
+800,Uganda,2005,22.2
+800,Uganda,2010,25.2
+800,Uganda,2015,26.6
+800,Uganda,2018,24.1
+858,Uruguay,1990,12.1
+858,Uruguay,1995,13.5
+858,Uruguay,2000,14.3
+858,Uruguay,2005,16.5
+858,Uruguay,2010,19.1
+858,Uruguay,2015,20.9
+858,Uruguay,2018,17.3
+716,Zimbabwe,1990,18.2
+716,Zimbabwe,1995,24.6
+716,Zimbabwe,2000,11.8
+716,Zimbabwe,2005,2
+716,Zimbabwe,2010,17
+716,Zimbabwe,2015,11.1
+716,Zimbabwe,2018,10.1
