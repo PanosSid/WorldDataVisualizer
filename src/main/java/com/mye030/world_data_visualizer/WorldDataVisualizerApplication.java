@@ -3,24 +3,27 @@ package com.mye030.world_data_visualizer;
 
 
 
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.mye030.world_data_visualizer.model.CountryPopulation;
 import com.mye030.world_data_visualizer.model.CountryPopulationId;
 import com.mye030.world_data_visualizer.repository.CountryPopulationRepository;
 import com.mye030.world_data_visualizer.repository.GPATotalRepository;
+import com.mye030.world_data_visualizer.service.CountryPopulationService;
 
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.mye030.world_data_visualizer"})
 public class WorldDataVisualizerApplication implements CommandLineRunner {
+	
+	@Autowired
+	private CountryPopulationService populationService;
 	
 	@Autowired 
 	private CountryPopulationRepository populationRepo;
@@ -34,7 +37,9 @@ public class WorldDataVisualizerApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) throws Exception {		
+		populationService.findByCountryIdAsJSONString(1);		
+		System.out.println(populationRepo.findByCountryId(1));	// should return [100, 110, 120]
 		System.out.println(populationRepo.selectPopulationsByCountryIdForAllYears(1));	// should return [100, 110, 120]
 		System.out.println(getCountryPopulationByIds(1, 2020));
 	

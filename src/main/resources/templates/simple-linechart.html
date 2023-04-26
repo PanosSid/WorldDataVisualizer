@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Simple Line Chart with D3.js</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+.line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 2px;
+}
+</style>
+</head>
+<body>
+	<div class="container mt-3">
+		<!-- We assign a hidden object to hold the pass variable. This allows client-side js, later, to use it -->
+		<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
+			th:value="${dataGiven}" />
+
+		<!-- placeholder to inject the svg -->
+		<!-- <div id=putTheSvg></div> -->
+		<svg width="500" height="300"></svg> 
+
+		<script>
+		  const passedDataC = document.getElementById('vrblId').value; 
+	      console.log("passedDataC:", passedDataC);
+	      /* const data = JSON.parse(passedDataC); */
+	      /* var passedDataC = '[{"x": "2000", "y": 100}, {"x": "2010", "y": 110},{"x": "2020", "y": 120}]'; */
+	      var data = JSON.parse(passedDataC);
+	      console.log("data:", data);
+	      
+	   // Set the dimensions and margins of the chart
+	      const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+	      const width = 500 - margin.left - margin.right;
+	      const height = 300 - margin.top - margin.bottom;
+
+	      // Define the scales and axis
+	      const xScale = d3.scaleLinear().domain(d3.extent(data, d => d.x)).range([0, width]);
+	      const yScale = d3.scaleLinear().domain([0, d3.max(data, d => d.y)]).range([height, 0]);
+	      const xAxis = d3.axisBottom(xScale);
+	      const yAxis = d3.axisLeft(yScale);
+
+	      // Define the line generator
+	      const line = d3.line()
+	        .x(d => xScale(d.x))
+	        .y(d => yScale(d.y));
+
+	      // Create the SVG element and add the line chart
+	      const svg = d3.select('svg')
+	        .append('g')
+	        .attr('transform', `translate(${margin.left},${margin.top})`);
+
+	      svg.append('path')
+	        .datum(data)
+	        .attr('class', 'line')
+	        .attr('d', line);
+
+	      // Add the x-axis
+	      svg.append('g')
+	        .attr('transform', `translate(0,${height})`)
+	        .call(xAxis);
+
+	      // Add the y-axis
+	      svg.append("g")
+		  	//.attr("class", "y axis")
+		    //.style('opacity','0')
+		    .call(yAxis)
+
+  </script>
+</body>
+</html>
