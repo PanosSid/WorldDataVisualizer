@@ -27,7 +27,7 @@ public class WorldDataVisualizerController {
 	public ModelAndView multiSeriesJson(ModelMap model) {
 		String jsonString = populationService.findByCountryIdAsJSONString(1);
         model.addAttribute("dataGiven", jsonString);
-		return new ModelAndView("simple-linechart", model);
+		return new ModelAndView("linechart", model);
 	}
 
 	
