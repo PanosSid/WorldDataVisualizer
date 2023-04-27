@@ -1,15 +1,11 @@
 package com.mye030.world_data_visualizer;
 
-
-
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 import com.mye030.world_data_visualizer.model.CountryPopulation;
 import com.mye030.world_data_visualizer.model.CountryPopulationId;
@@ -19,7 +15,6 @@ import com.mye030.world_data_visualizer.service.CountryPopulationService;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.mye030.world_data_visualizer"})
 public class WorldDataVisualizerApplication implements CommandLineRunner {
 	
 	@Autowired
