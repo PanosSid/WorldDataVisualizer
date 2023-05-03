@@ -1,6 +1,5 @@
 package com.mye030.world_data_visualizer.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,8 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mye030.world_data_visualizer.service.CountryPopulationService;
 
-
-
 @Controller
 public class WorldDataVisualizerController {
 	
@@ -19,8 +16,8 @@ public class WorldDataVisualizerController {
 	private CountryPopulationService populationService;
 
 	@GetMapping("/chartForm")
-	public ModelAndView displayMainView() {
-		return new ModelAndView("mainPage.html");
+	public ModelAndView displayMainView(ModelMap model) {
+		return new ModelAndView("chart_generator.html", model);
 	}
 		
 	@RequestMapping("/lineChart")
@@ -29,6 +26,5 @@ public class WorldDataVisualizerController {
         model.addAttribute("dataGiven", jsonString);
 		return new ModelAndView("linechart", model);
 	}
-
 	
 }
