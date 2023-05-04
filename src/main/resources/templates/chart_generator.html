@@ -24,17 +24,17 @@
 			<div id="pairs">
 				<div class="form-row mb-2">
 					<div class="col">
-						<select class="form-control" name="indicator">
-							<option value="" selected="selected">Indicator</option>
-							<option th:each="indicator : ${indicators}"
-								th:value="${indicator}" th:text="${indicator}"></option>
+						<select class="form-control" name="country">
+							<option value="" selected hidden>Country</option>
+							<option th:each="country : ${countries}" th:value="${country}"
+								th:text="${country}"></option>
 						</select>
 					</div>
 					<div class="col">
-						<select class="form-control" name="country">
-							<option value="" selected="selected">Country</option>
-							<option th:each="country : ${countries}" th:value="${country}"
-								th:text="${country}"></option>
+						<select class="form-control" name="indicator" >
+							 <option value="" selected hidden>Indicator</option>
+							<option th:each="indicator : ${indicators}"
+								th:value="${indicator}" th:text="${indicator}"></option>
 						</select>
 					</div>
 					<div class="col-auto">

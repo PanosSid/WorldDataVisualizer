@@ -2,11 +2,11 @@ $(document).ready(function() {
 			
 	$('.addPair').click(function() {
 		
-		var indicatorOptionsHtml = '<option value="" selected="selected">Indicator</option>'; 
+		var indicatorOptionsHtml = '<option value="" selected hidden>Indicator</option>'; 
 		for (let indicator of indicatorsList)
 			indicatorOptionsHtml += '<option value="'+indicator+'">'+indicator+'</option>';
 				
-		var countryOptionsHtml = '<option value="" selected="selected">Country</option>';
+		var countryOptionsHtml = '<option value="" selected hidden>Country</option>';
 		for (let country of countriesList)
 			countryOptionsHtml += '<option value="'+country+'">'+country+'</option>';
 
@@ -14,15 +14,15 @@ $(document).ready(function() {
 		'<div id="pairs">'+
 			'<div class="form-row mb-2">'+
 				'<div class="col">'+
+					'<select class="form-control" name="country">'+
+					countryOptionsHtml+
+					'</select>'+
+				 '</div>' +
+				'<div class="col">'+
                 	'<select class="form-control" name="indicator">'+
                     	indicatorOptionsHtml+
                     '</select>'+
                  '</div>'+
-	            '<div class="col">'+
-	                '<select class="form-control" name="country">'+
-	                    countryOptionsHtml+
-	                '</select>'+
-				'</div>' +
 				'<div class="col-auto">' +
 					'<button type="button" class="btn btn-danger removePair">&times;</button>' +
 				'</div>' +
@@ -56,7 +56,7 @@ $(document).ready(function() {
 //		    $('form').append(input1);
 //		    $('form').append(input2);
 //		}
-		
+	
 		alert('Chart type: ' + chartType + '\nPairs: ' + JSON.stringify(pairsList));
 		
 	});
