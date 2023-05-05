@@ -56,7 +56,27 @@ $(document).ready(function() {
 //		    $('form').append(input1);
 //		    $('form').append(input2);
 //		}
-	
+		
+		fetch('/generateChart', {
+			  method: 'POST',
+			  headers: {
+			    'Content-Type': 'application/json'
+			  },
+			  body: pairsList
+			})
+			.then(response => {
+			  if (!response.ok) {
+			    throw new Error('Network response was not ok');
+			  }
+			  return response.json();
+			})
+			.then(data => {
+			  // handle the response data
+			})
+			.catch(error => {
+			  console.error('There was an error:', error);
+			});
+		
 		alert('Chart type: ' + chartType + '\nPairs: ' + JSON.stringify(pairsList));
 		
 	});

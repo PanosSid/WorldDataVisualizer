@@ -1,20 +1,21 @@
 package com.mye030.world_data_visualizer.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mye030.world_data_visualizer.service.CountryPopulationService;
 
-@Controller
+@RestController
 public class WorldDataVisualizerController {
 	
 	@Autowired
@@ -29,9 +30,21 @@ public class WorldDataVisualizerController {
 		return new ModelAndView("chart_generator.html", model);
 	}
 		
-	@RequestMapping("/generateChart")
-	public void generateChart(@RequestParam("indicator") String param, Model model) {
-		System.out.println(param);
+	@PostMapping("/generateChart")
+	public void generateChart(@RequestBody String data) {
+		System.out.println("Data from view: "data);
+		String dataArray[] = data.split(",");
+		List<String> countries = new ArrayList<String>();
+		List<String> indicators = new ArrayList<String>();
+		for (int i = 0; i < dataArray.length; i++) {
+			if (i % 2 == 0) {
+				indicators.add(dataArray[i]);
+			} else {
+				countries.add(dataArray[i]);
+			}
+		}
+		System.out.println("Countries: "+countries);
+		System.out.println("Indicators: "+indicators);
 	}
 	
 	@RequestMapping("/lineChart")
