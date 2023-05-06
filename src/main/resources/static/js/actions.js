@@ -43,26 +43,18 @@ $(document).ready(function() {
 		var pairsList = [];
 
 		$('#pairs .form-row').each(function() {
+			var country = $(this).find('select[name="country"]').val();
 		    var indicator = $(this).find('select[name="indicator"]').val();
-		    var country = $(this).find('select[name="country"]').val();
 		    if (indicator && country)
-		        pairsList.push([indicator, country]);
+		        pairsList.push([country, indicator]);
 		});
-
-//		for (var i = 0; i < pairsList.length; i++) {
-//		    var pair = pairsList[i];
-//		    var input1 = $('<input type="hidden" name="pairsList[' + i + '][0]" value="' + pair[0] + '">');
-//		    var input2 = $('<input type="hidden" name="pairsList[' + i + '][1]" value="' + pair[1] + '">');
-//		    $('form').append(input1);
-//		    $('form').append(input2);
-//		}
 		
 		fetch('/generateChart', {
 			  method: 'POST',
 			  headers: {
 			    'Content-Type': 'application/json'
 			  },
-			  body: pairsList
+			  body: JSON.stringify(pairsList)
 			})
 			.then(response => {
 			  if (!response.ok) {
@@ -77,7 +69,7 @@ $(document).ready(function() {
 			  console.error('There was an error:', error);
 			});
 		
-		alert('Chart type: ' + chartType + '\nPairs: ' + JSON.stringify(pairsList));
+		//alert('Chart type: ' + chartType + '\nPairs: ' + JSON.stringify(pairsList));
 		
 	});
 });
