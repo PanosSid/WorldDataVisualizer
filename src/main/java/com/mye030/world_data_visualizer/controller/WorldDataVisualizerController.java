@@ -35,7 +35,7 @@ public class WorldDataVisualizerController {
 	
 	@RequestMapping("/lineChart")
 	public ModelAndView multiSeriesJson(ModelMap model) {
-		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr("Greece", "GNI");
+		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr("Greece", "Birth rate (births per 1.000 population)");
 		System.out.println(jsonString);
         model.addAttribute("dataGiven", jsonString);
 		return new ModelAndView("linechart", model);

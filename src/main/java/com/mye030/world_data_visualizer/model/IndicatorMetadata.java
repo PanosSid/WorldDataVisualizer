@@ -16,16 +16,15 @@ public class IndicatorMetadata {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "description")
-	private String description;
+//	@Column(name = "description")
+//	private String description;
 	
 	public IndicatorMetadata() {}
 	
-	public IndicatorMetadata(int id, String name, String description) {
+	public IndicatorMetadata(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.description = description;
 	}
 
 	public int getId() {
@@ -44,17 +43,11 @@ public class IndicatorMetadata {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	@Override
 	public String toString() {
-		return "IndicatorMetadata [id=" + id + ", name=" + name + ", description=" + description + "]";
+		return "IndicatorMetadata [id=" + id + ", name=" + name + "]";
 	}
+	
+	
 	
 }
