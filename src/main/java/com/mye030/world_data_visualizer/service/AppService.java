@@ -9,5 +9,7 @@ public interface AppService {
 	List<String> getAllIndicatorNames();
 
 	List<String> getAllCountryNames();
+
+	String getTotalPopulationForCountry(String string);
 	
 }
