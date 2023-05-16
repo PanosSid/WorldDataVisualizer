@@ -46,12 +46,18 @@ def formatCleanDataSetFileName(sheet_name):
 
 
 
-pivot_df = pd.read_csv("extracted-data\countries.csv", encoding="ANSI")
+pivot_df = pd.read_csv("tmp_files\\tmp_countries.csv")
 pivot_df = pivot_df[["Official_Name", "ISO_Code"]]
 KNOWN_COUNTRIES = pivot_df["Official_Name"].tolist()
+indicator_ids_df = pd.read_csv("indicator-id-mapping.csv")
+
 
 xls_file = pd.ExcelFile("extracted-data\Income by Country.xlsx")
 sheet_names = xls_file.sheet_names
+
+economics_df = pd.DataFrame(columns=['country_id', 'year', 'indicator_id', 'indicator_value'])
+
+
 
 for sheet_name in sheet_names:
     print("Cleaning: "+sheet_name+"...")
@@ -62,8 +68,16 @@ for sheet_name in sheet_names:
     df = aggregatePer5Years(df)
     df = transformToLongFormat(df, sheet_name)
     df = pd.merge(df, pivot_df, left_on = "Country", right_on = "Official_Name")
-    df = df[["ISO_Code", "Country", "year", sheet_name]]
-    df.to_csv(formatCleanDataSetFileName(sheet_name), index=False)
+    df['indicator_name'] = sheet_name
+    df = df.drop(['Country'], axis=1, errors='ignore')
+    df.rename(columns = {'ISO_Code':'country_id', sheet_name : 'indicator_value' }, inplace = True)
+    df = df[['country_id', 'year', 'indicator_name', 'indicator_value']]
+    df = pd.merge(df, indicator_ids_df, left_on = "indicator_name", right_on = "indicator_name")
+    df = df[['country_id', 'year', 'indicator_id', 'indicator_value']]
+
+    economics_df = pd.concat([economics_df, df])
+
+economics_df.to_csv("transformed-data\clean_economics.csv", index=False)
 
 
 

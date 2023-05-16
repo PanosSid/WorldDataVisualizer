@@ -1,13 +1,13 @@
 indicator_id,indicator_name
 1,Income Index
-2,Labour share of GDP
-3,Gross fixed capital formation
-4,GDP total
+2,Domestic credits
+3,Estimated GNI female
+4,Estimated GNI male
 5,GDP per capita
-6,GNI per capita
-7,Estimated GNI male
-8,Estimated GNI female
-9,Domestic credits
+6,GDP total
+7,Gross fixed capital formation
+8,GNI per capita
+9,Labour share of GDP
 10,fertility_rate_15_19
 11,fertility_rate_20_24
 12,fertility_rate_25_29

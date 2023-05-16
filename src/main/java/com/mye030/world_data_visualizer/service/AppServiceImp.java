@@ -1,5 +1,6 @@
 package com.mye030.world_data_visualizer.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,12 +52,16 @@ public class AppServiceImp implements AppService {
 
 	@Override
 	public List<String> getAllIndicatorNames() {
-		return indicatorRepo.findAllNames();
+		List<String> list = indicatorRepo.findAllNames(); 
+		Collections.sort(list);
+		return list;
 	}
 
 	@Override
 	public List<String> getAllCountryNames() {
-		return countryRepo.findAllNames();
+		List<String> list = countryRepo.findAllNames(); 
+		Collections.sort(list);
+		return list;
 	}
 	
 	
