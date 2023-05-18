@@ -26,4 +26,24 @@ public interface PopulationsRepository  extends JpaRepository<Populations, Popul
     		+ "GROUP BY FLOOR(year / :aggrYears)")
     List<Object[]> getTotalPopulationForCountryByAggregateYears(@Param("countryId") int countryId, @Param("aggrYears") int aggrYears);
     
+    
+    @Query("SELECT year, SUM(population)\n"
+			+ "FROM Populations\n"
+			+ "WHERE country_id = :countryId and sex = :sex\n"
+			+ "GROUP BY year")
+    List<Object[]> getPopulationForCountryAndSex(@Param("countryId") int countryId, @Param("sex") String gender);
+    
+    @Query("SELECT year, SUM(population) \n"
+    		+ "FROM Populations \n"
+    		+ "WHERE country_id = :countryId and age = :age \n"
+    		+ "GROUP BY year")
+    List<Object[]> getTotalPopulationForCountryAndAge(@Param("countryId") int countryId, @Param("age") int age);
+    
+    
+    @Query("SELECT year, SUM(population) \n"
+    		+ "FROM Populations \n"
+    		+ "WHERE country_id = :countryId and age = :age and sex = :sex\n"
+    		+ "GROUP BY year")
+    List<Object[]> getPopulationForCountryAndAgeAndSex(@Param("countryId") int countryId, @Param("age") int age, @Param("sex") String gender);
+
 }
