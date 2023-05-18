@@ -1,72 +1,206 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Simple Line Chart with D3.js</title>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<style>
-.line {
-	fill: none;
-	stroke: steelblue;
-	stroke-width: 2px;
-}
-</style>
+  <title>Line Chart Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add some styling to the chart container */
+    #chart-container {
+      width: 750px;
+      height: 600px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .line {
+      fill: none;
+      stroke-width: 2px;
+    }
+    .axis text {
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .chart-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-anchor: middle;
+      font-family: Arial, sans-serif;
+    }
+    .axis-label {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+    .legend rect {
+      stroke-width: 1px;
+    }
+    .legend text {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
 <body>
-	<div class="container mt-3">
-		<!-- We assign a hidden object to hold the pass variable. This allows client-side js, later, to use it -->
-		<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
+  <h1>Line Chart Example</h1>
+  
+  <div id="chart-container" ></div>
+	
+	<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
 			th:value="${dataGiven}" />
+	
+	
+  <!-- Include D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  
+ <script th:inline="javascript">
+  
+  var indicatorsList = /*[[${indicators}]]*/ [];
+	var countriesList = /*[[${countries}]]*/ [];  
+	
+	var legendLabels = []
+	for (let i = 0; i < countriesList.length; i++) {
+		legendLabels.push(countriesList[i] +" - "+ indicatorsList[i]);
+    } 
+	
+  	console.log(countriesList);
+    // Your D3.js code for creating the line chart will go here
+    // Select the chart container
+    const container = d3.select("#chart-container");
+    
+    const passedDataC = document.getElementById('vrblId').value;
+    //console.log("passedDataC:", passedDataC);
+    var data = JSON.parse(passedDataC);
+    
+    // Combine the datasets into a single array
+    const combinedDataset = [];
+    for (let i = 0; i < data.length; i++) {
+    	combinedDataset.push(JSON.parse(data[i]));
+    } 
 
-		<!-- placeholder to inject the svg -->
-		<!-- <div id=putTheSvg></div> -->
-		<svg width="500" height="300"></svg> 
+    var datasets =  combinedDataset;
+    	
+    console.log("datasets:", datasets);
+    // Set up the dimensions and margins for the chart
+    var bottom = 50;
+    
+    const margin = { top: 50, right: 50, bottom: 100, left: 50 };
+    const width = 700;
+    const height = 500;
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom-20;
 
-		<script>
-		  const passedDataC = document.getElementById('vrblId').value; 
-	      console.log("passedDataC:", passedDataC);
-	      /* const data = JSON.parse(passedDataC); */
-	      /* var passedDataC = '[{"x": "2000", "y": 100}, {"x": "2010", "y": 110},{"x": "2020", "y": 120}]'; */
-	      var data = JSON.parse(passedDataC);
-	      console.log("data:", data);
-	      
-	   // Set the dimensions and margins of the chart
-	      const margin = { top: 20, right: 20, bottom: 30, left: 50 };
-	      const width = 500 - margin.left - margin.right;
-	      const height = 300 - margin.top - margin.bottom;
+    // Create the SVG element
+    const svg = container.append("svg")
+      .attr("width", width)
+      .attr("height", height);
 
-	      // Define the scales and axis
-	      const xScale = d3.scaleLinear().domain(d3.extent(data, d => d.x)).range([0, width]);
-	      const yScale = d3.scaleLinear().domain([0, d3.max(data, d => d.y)]).range([height, 0]);
-	      const xAxis = d3.axisBottom(xScale);
-	      const yAxis = d3.axisLeft(yScale);
+    const xScale = d3
+    .scaleLinear()
+    .domain([
+      d3.min(combinedDataset, dataset => d3.min(dataset, d => d.x)),
+      d3.max(combinedDataset, dataset => d3.max(dataset, d => d.x))
+    ])
+    .range([0, innerWidth]);
 
-	      // Define the line generator
-	      const line = d3.line()
-	        .x(d => xScale(d.x))
-	        .y(d => yScale(d.y));
+  const yScale = d3
+    .scaleLinear()
+    .domain([
+      0,
+      d3.max(combinedDataset, dataset => d3.max(dataset, d => d.y))
+    ])
+    .range([innerHeight, 0]);
 
-	      // Create the SVG element and add the line chart
-	      const svg = d3.select('svg')
-	        .append('g')
-	        .attr('transform', `translate(${margin.left},${margin.top})`);
+    // Create line generator
+    const line = d3
+      .line()
+      .x(d => xScale(d.x))
+      .y(d => yScale(d.y));
 
-	      svg.append('path')
-	        .datum(data)
-	        .attr('class', 'line')
-	        .attr('d', line);
+    // Draw lines
+    svg.selectAll(".line")
+      .data(combinedDataset)
+      .enter()
+      .append("path")
+      .attr("class", "line")
+      .attr("d", line)
+      .style("stroke", (_, i) => d3.schemeCategory10[i])
+      .style("transform", `translate(${margin.left}px, ${margin.top}px)`);
 
-	      // Add the x-axis
-	      svg.append('g')
-	        .attr('transform', `translate(0,${height})`)
-	        .call(xAxis);
+    // Create x axis
+    const xAxis = d3.axisBottom(xScale);
 
-	      // Add the y-axis
-	      svg.append("g")
-		  	//.attr("class", "y axis")
-		    //.style('opacity','0')
-		    .call(yAxis)
+    // Create y axis
+    const yAxis = d3.axisLeft(yScale);
 
+    // Append x axis to the chart
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(${margin.left}, ${margin.top + innerHeight})`)
+      .call(xAxis);
+
+    // Append y axis to the chart
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(${margin.left}, ${margin.top})`)
+      .call(yAxis);
+
+    // Add x axis label
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", `translate(${margin.left + innerWidth / 2}, ${height - bottom-25})`)
+      .style("text-anchor", "middle")
+      .text("Years");
+
+    // Add y axis label
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", `translate(${margin.left - 30}, ${margin.top + innerHeight / 2}) rotate(-90)`)
+      .style("text-anchor", "middle")
+      .text("Indicator value");
+
+    // Add chart title
+    svg.append("text")
+      .attr("class", "chart-title")
+      .attr("transform", `translate(${width / 2}, ${margin.top / 2})`)
+      .style("text-anchor", "middle")
+      .text("Timeline");
+    
+    // Create legend
+    const legend = svg
+      .append("g")
+      .attr("class", "legend")
+		//.attr("transform", "translate(" + width - margin.right + "," + margin.bottom + ")");
+    .attr("transform", `translate(${margin.left + innerWidth / 20}, ${height - bottom-15})`);
+
+    // Add legend items
+    const legendItems = legend
+      .selectAll(".legend-item")
+      .data(combinedDataset)
+      .enter()
+      .append("g")
+      .attr("class", "legend-item")
+      .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+    // Add legend color rectangles
+    legendItems
+      .append("rect")
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", (_, i) => d3.schemeCategory10[i]);
+
+    // Add legend text labels
+    legendItems
+      .append("text")
+      .attr("x", 15)
+      .attr("y", 6)
+      .attr("dy", "0.35em")
+      .text((_, i) => legendLabels[i]);
   </script>
 </body>
 </html>

@@ -8,6 +8,6 @@ public interface AppService {
 	
 	List<String> getAllCountryNames();
 	
-	String getValuesByCountryAndIndicatorAsJSONStr(String countryName, String indicatorName);
+	String getValuesByCountryAndIndicatorAsJSONStr(List<String> countries, List<String> indicators);
 	
 }

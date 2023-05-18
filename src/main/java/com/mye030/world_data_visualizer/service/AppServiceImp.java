@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mye030.world_data_visualizer.repository.CountryMetadataRepository;
-import com.mye030.world_data_visualizer.repository.IndicatorMetadataRepository;
 
 @Service
 public class AppServiceImp implements AppService {
@@ -21,9 +21,18 @@ public class AppServiceImp implements AppService {
 	
 	@Autowired
 	private IndicatorValuesService indicatorValuesService; 
-		
-	@Override
-	public String getValuesByCountryAndIndicatorAsJSONStr(String countryName, String indicatorName) {
+	
+	public String getValuesByCountryAndIndicatorAsJSONStr(List<String> countryNames, List<String> indicatorNames) {
+		JSONArray array = new JSONArray();
+		array.put(getValuesByCountryAndIndicatorAsJSONStr(countryNames.get(0), indicatorNames.get(0)));
+		for (int i = 1; i < countryNames.size(); i++) {
+			array.put(getValuesByCountryAndIndicatorAsJSONStr(countryNames.get(i), indicatorNames.get(i)));
+			
+		}
+		return array.toString();
+	}
+	
+	private String getValuesByCountryAndIndicatorAsJSONStr(String countryName, String indicatorName) {
 		List<Object[]> yearsAndValues = null;
 		if (populationsService.getAllPopulationsIndicators().contains(indicatorName)) {
 			yearsAndValues = populationsService.getPopulationOfCountry(countryName, indicatorName);
