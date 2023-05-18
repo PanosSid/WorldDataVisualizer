@@ -3,17 +3,19 @@ package com.mye030.world_data_visualizer.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mye030.world_data_visualizer.model.FormData;
 import com.mye030.world_data_visualizer.service.AppService;
 
-@RestController
+@Controller
 public class WorldDataVisualizerController {
 	
 	@Autowired
@@ -29,18 +31,29 @@ public class WorldDataVisualizerController {
 	}
 		
 	@PostMapping("/generateChart")
-	public void generateChart(@RequestBody List<List<String>> pairs) {
-		System.out.println(pairs);
+	public ModelAndView generateChart(@RequestBody FormData formData, ModelMap model) {
+		model.addAttribute("indicators", formData.getIndicators());
+		model.addAttribute("countries", formData.getCountries());
+        return new ModelAndView("redirect:/"+formData.getChartType()+"Chart", model);
 	}
 	
-	@RequestMapping("/lineChart")
-	public ModelAndView multiSeriesJson(ModelMap model) {
-//		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr("Greece", "Birth rate (births per 1.000 population)");
-//		String jsonString = appService.getTotalPopulationForCountry("Greece");
-		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr("Greece", "Gross national income (GNI) per capita (2011 PPP $)");
-		System.out.println(jsonString);
+	@GetMapping("/lineChart")
+	public ModelAndView viewLineChart(@ModelAttribute("countries") List<String> countries, @ModelAttribute("indicators") List<String> indicators, ModelMap model) {
+		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr(countries.get(0), indicators.get(0));
         model.addAttribute("dataGiven", jsonString);
 		return new ModelAndView("linechart", model);
+	}
+	
+	@GetMapping("/barChart")
+	public ModelAndView viewBarChart(@ModelAttribute("countries") List<String> countries, @ModelAttribute("indicators") List<String> indicators, ModelMap model) {
+        model.addAttribute("chartTitle", "Bar chart for "+countries+"\n"+indicators);
+		return new ModelAndView("not_implemented", model);
+	}
+	
+	@GetMapping("/scatterChart")
+	public ModelAndView viewScatterChart(@ModelAttribute("countries") List<String> countries, @ModelAttribute("indicators") List<String> indicators, ModelMap model) {
+        model.addAttribute("chartTitle", "Scatter chart for "+countries+"\n"+indicators);
+		return new ModelAndView("not_implemented", model);
 	}
 	
 }

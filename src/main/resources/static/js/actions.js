@@ -40,13 +40,19 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		var chartType = $('#chartType').val();
-		var pairsList = [];
-
+		var formData = {
+				  "chartType": chartType,
+				  "countries": [],
+				  "indicators": []
+				};
+		
 		$('#pairs .form-row').each(function() {
 			var country = $(this).find('select[name="country"]').val();
 		    var indicator = $(this).find('select[name="indicator"]').val();
-		    if (indicator && country)
-		        pairsList.push([country, indicator]);
+		    if (indicator && country){
+		    	formData.countries.push(country);
+		    	formData.indicators.push(indicator);
+		    }
 		});
 		
 		fetch('/generateChart', {
@@ -54,16 +60,13 @@ $(document).ready(function() {
 			  headers: {
 			    'Content-Type': 'application/json'
 			  },
-			  body: JSON.stringify(pairsList)
+			  body: JSON.stringify(formData)
 			})
 			.then(response => {
 			  if (!response.ok) {
 			    throw new Error('Network response was not ok');
 			  }
-			  return response.json();
-			})
-			.then(data => {
-			  // handle the response data
+			  window.location.href = response.url; // Redirect to the new URL
 			})
 			.catch(error => {
 			  console.error('There was an error:', error);
