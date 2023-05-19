@@ -10,4 +10,6 @@ public interface AppService {
 	
 	String getValuesByCountryAndIndicatorAsJSONStr(List<String> countries, List<String> indicators);
 	
+	String getDataForBarChart(List<String> countryNames, List<String> indicatorNames);
+	
 }

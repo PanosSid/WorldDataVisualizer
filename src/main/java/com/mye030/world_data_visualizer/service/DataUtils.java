@@ -1,6 +1,7 @@
 package com.mye030.world_data_visualizer.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -25,6 +26,14 @@ public class DataUtils {
 			array.put(jsonObj);
 		}
 		return array.toString();
-
 	}
+	
+	public static HashMap<Number, Number> convertListsToMap(List<Number> years, List<Number> values){
+		HashMap<Number, Number> result = new  HashMap<Number, Number> ();
+		for (int i = 0; i < years.size(); i++) {
+		    result.put(years.get(i), values.get(i));
+		}
+		return result;
+	}
+
 }

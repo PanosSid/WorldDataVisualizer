@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grouped Bar Chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .bar {
+      opacity: 0.7;
+    }
+
+    .bar:hover {
+      opacity: 1;
+    }
+
+    .axis-x,
+    .axis-y {
+      font-size: 12px;
+    }
+    
+    /* Center the SVG */
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+ <h1>Bar Chart</h1>
+	<div id="chart-container" ></div>
+	
+	<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
+			th:value="${dataGiven}" />
+			
+ <script th:inline="javascript">
+  
+  var indicatorsList = /*[[${indicators}]]*/ [];
+	var countriesList = /*[[${countries}]]*/ [];  
+	
+	var legendLabels = []
+	for (let i = 0; i < countriesList.length; i++) {
+		legendLabels.push(countriesList[i] +" - "+ indicatorsList[i]);
+  	} 
+	console.log(legendLabels);
+	  const container = d3.select("#chart-container");
+  
+  const passedDataC = document.getElementById('vrblId').value;
+  console.log("passedDataC:", passedDataC);
+  var data = JSON.parse(passedDataC);
+  console.log("data:", passedDataC);
+
+  var bottom = 50;
+  
+    var margin = { top: 20, right: 70, bottom: 80, left: 70 };
+    const SIZE = data.length;
+	var width = 0;
+	if (SIZE > 10){
+		width = 1550 - margin.left - margin.right;
+	} else {
+		width = 800 - margin.left - margin.right;
+	}
+	
+    //var width = 800 - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom-20;
+
+    var svg =  d3.select("#chart-container")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var x0 = d3
+      .scaleBand()
+      .domain(data.map(function (d) { return d.group; }))
+      .rangeRound([0, width])
+      .paddingInner(0.1);
+
+    var x1 = d3
+      .scaleBand()
+      .domain(data[0].bars.map(function (d) { return d.name; }))
+      .rangeRound([0, x0.bandwidth()])
+      .padding(0.05);
+
+    var y = d3
+      .scaleLinear()
+      .domain([0, d3.max(data, function (d) { return d3.max(d.bars, function (d) { return d.value; }); })])
+      .rangeRound([height, 0]);
+
+    svg
+      .append("g")
+      .attr("class", "x-axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x0));
+    
+    // Add x axis label	
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", `translate(${margin.left + innerWidth / 2}, ${height - bottom+90})`)
+      .style("text-anchor", "middle")
+      .text("Years");
+
+    svg
+      .append("g")
+      .attr("class", "y-axis")
+      .call(d3.axisLeft(y).ticks(10));
+	
+    // Add y axis label
+    svg.append("text")
+      .attr("class", "axis-label")
+      .attr("transform", `translate(${margin.left - 100}, ${margin.top + innerHeight / 2}) rotate(-90)`)
+      .style("text-anchor", "middle")
+      .text("Indicator value");
+    
+
+    svg
+      .selectAll(".group")
+      .data(data)
+      .enter()
+      .append("g")
+      .attr("class", "group")
+      .attr("transform", function (d) { return "translate(" + x0(d.group) + ",0)"; })
+      .selectAll("rect")
+      .data(function (d) { return d.bars; })
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", function (d) { return x1(d.name); })
+      .attr("y", function (d) { return y(d.value); })
+      .attr("width", x1.bandwidth())
+      .attr("height", function (d) { return height - y(d.value); })
+      //.attr("fill", function (d) { return getColor(d.name); });
+    .style("fill", (_, i) => d3.schemeCategory10[i]);
+
+    svg
+      .selectAll(".bar")
+      .attr("opacity", 0.7);
+
+    svg
+      .selectAll(".group")
+      .attr("opacity", 0.9);
+    
+    // Create legend
+    const legend = svg
+      .append("g")
+      .attr("class", "legend")
+		//.attr("transform", "translate(" + width - margin.right + "," + margin.bottom + ")");
+    .attr("transform", `translate(${margin.left + innerWidth / 20}, ${height - bottom+100})`);
+
+     // Add legend items
+    const legendItems = legend
+      .selectAll(".legend-item")
+      .data(legendLabels)
+      .enter()
+      .append("g")
+      .attr("class", "legend-item")
+      .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+    // Add legend color rectangles
+    legendItems
+      .append("rect")
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", (_, i) => d3.schemeCategory10[i]);
+
+    // Add legend text labels
+    legendItems
+      .append("text")
+      .attr("x", 15)
+      .attr("y", 6)
+      .attr("dy", "0.35em")
+	  .text(function(d, i) { return legendLabels[i]; });
+  </script>
+</body>
+
+</html>

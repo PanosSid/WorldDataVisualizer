@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,9 +46,12 @@ public class WorldDataVisualizerController {
 	}
 	
 	@GetMapping("/barChart")
-	public ModelAndView viewBarChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) {
-        model.addAttribute("chartTitle", "Bar chart for "+countries+"\n"+indicators);
-		return new ModelAndView("not_implemented", model);
+	public ModelAndView viewBarChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) { 
+		String jsonString = appService.getDataForBarChart(countries, indicators);
+        model.addAttribute("dataGiven", jsonString);
+        model.addAttribute("countries", countries);
+        model.addAttribute("indicators", indicators);
+		return new ModelAndView("barchart", model);
 	}
 	
 	@GetMapping("/scatterChart")
