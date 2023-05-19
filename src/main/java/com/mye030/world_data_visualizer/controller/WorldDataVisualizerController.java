@@ -1,5 +1,6 @@
 package com.mye030.world_data_visualizer.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,10 +55,13 @@ public class WorldDataVisualizerController {
 		return new ModelAndView("barchart", model);
 	}
 	
-	@GetMapping("/scatterChart")
-	public ModelAndView viewScatterChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) {
-        model.addAttribute("chartTitle", "Scatter chart for "+countries+"\n"+indicators);
-		return new ModelAndView("not_implemented", model);
+	@GetMapping("/scatterPlot")
+	public ModelAndView viewScatterChart(/*@RequestParam("country") String country, @RequestParam("indicators") List<String> indicators, */ModelMap model) {
+		String country = "countryName";
+		List<String> indicators = Arrays.asList("indicator1", "indicator2");
+//		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr(country, indicators);
+//		model.addAttribute("dataGiven", jsonString);
+		return new ModelAndView("scatter_plot", model);
 	}
 	
 }
