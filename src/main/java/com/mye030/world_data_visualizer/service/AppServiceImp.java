@@ -30,7 +30,7 @@ public class AppServiceImp implements AppService {
 			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
 			List<Number> years = DataUtils.getNumbersAtIndex(yearsAndValues, 0);
 			List<Number> values = DataUtils.getNumbersAtIndex(yearsAndValues, 1);
-			data.put(countryNames.get(i), DataUtils.convertListsToMap(years, values));
+			data.put(countryNames.get(i)+i, DataUtils.convertListsToMap(years, values));	// the "+i" is used to diffrentiate the keys with the same name
 		}
 		BarChartFormatter bcf = new BarChartFormatter();
 		return bcf.getFormattedBarChartData(data);
