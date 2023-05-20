@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -40,7 +39,7 @@ public class WorldDataVisualizerController {
 	@GetMapping("/lineChart")
 	public ModelAndView viewLineChart(HttpSession session, ModelMap model) {
 		FormData formData = (FormData) session.getAttribute("formData");
-		String jsonString = appService.getDataForLineChart(formData.getCountries(), formData.getIndicators());
+		String jsonString = appService.getDataForLineChart(formData.getCountries(), formData.getIndicators(), 5, -1, -1);
         model.addAttribute("dataGiven", jsonString);
         model.addAttribute("countries", formData.getCountries());
         model.addAttribute("indicators", formData.getIndicators());
@@ -50,7 +49,7 @@ public class WorldDataVisualizerController {
 	@GetMapping("/barChart")
 	public ModelAndView viewBarChart(HttpSession session, ModelMap model) { 
 		FormData formData = (FormData) session.getAttribute("formData");
-		String jsonString = appService.getDataForBarChart(formData.getCountries(), formData.getIndicators());
+		String jsonString = appService.getDataForBarChart(formData.getCountries(), formData.getIndicators(), 5, 2000, 2025);
         model.addAttribute("dataGiven", jsonString);
         model.addAttribute("countries", formData.getCountries());
         model.addAttribute("indicators", formData.getIndicators());
@@ -60,7 +59,7 @@ public class WorldDataVisualizerController {
 	@GetMapping("/scatterChart")
 	public ModelAndView viewScatterChart(HttpSession session, ModelMap model) {
 		FormData formData = (FormData) session.getAttribute("formData");
-		String jsonString = appService.getDataForScatterChart(formData.getCountries(), formData.getIndicators());
+		String jsonString = appService.getDataForScatterChart(formData.getCountries(), formData.getIndicators(), -1, 2000, 2005);
         model.addAttribute("dataGiven", jsonString);
         model.addAttribute("countries", formData.getCountries());
         model.addAttribute("indicators", formData.getIndicators());
