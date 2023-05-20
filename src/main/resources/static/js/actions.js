@@ -40,15 +40,9 @@ $(document).ready(function() {
 				event.preventDefault();
 
 				var chartType = $('#chartType').val();
-
 				var minYear = $('input[name="number1"]').val();
 				var maxYear = $('input[name="number2"]').val();
 				var aggregate = $('select[name="selectChoice"]').val();
-				
-				console.log(chartType);
-				console.log(minYear);
-				console.log(maxYear);
-				console.log(aggregate);
 
 				var formData = {
 						  "chartType": chartType,
@@ -69,7 +63,7 @@ $(document).ready(function() {
 				});
 				
 				if (chartType == "scatter"){
-					if (formData.countries.length > 2 ){
+					if (formData.countries.length != 2 ){
 						alert("To generate a scatter plot, it is necessary to select two pairs of countries and indicators," +
 								" where the countries chosen for comparison are the same.");
 						return;
@@ -97,8 +91,6 @@ $(document).ready(function() {
 					.catch(error => {
 					  console.error('There was an error:', error);
 					});
-				
-				//alert('Chart type: ' + chartType + '\nPairs: ' + JSON.stringify(pairsList));
 				
 			});
 		});

@@ -27,18 +27,19 @@ public class AppServiceImp implements AppService {
 	
 	
 	@Override
-	public String getDataForScatterChart(List<String> countryNames, List<String> indicatorNames) {	
+	public String getDataForScatterChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {	
 		List<Object[]> yearsAndValues1 = getYearsAndValues(countryNames.get(0), indicatorNames.get(0));
-		List<Number> years1 = DataUtils.getNumbersAtIndex(yearsAndValues1, 0);
-		List<Number> values1 = DataUtils.getNumbersAtIndex(yearsAndValues1, 1);
-		Map<Number, Number> map1 = DataUtils.convertListsToMap(years1, values1);
-		
+		Map<Number, Number> map1 = DataUtils.convertYearsAndValuesToMap(yearsAndValues1);
+		map1 = DataUtils.filter(start, end, map1);
+//		map1 = DataUtils.aggregateBy(aggr, map1);
+		List<Number> years1 = new ArrayList<Number>((map1.keySet()));
 		
 		List<Object[]> yearsAndValues2 = getYearsAndValues(countryNames.get(0), indicatorNames.get(1));
-		List<Number> years2 = DataUtils.getNumbersAtIndex(yearsAndValues2, 0);
-		List<Number> values2 = DataUtils.getNumbersAtIndex(yearsAndValues2, 1);
-		Map<Number, Number> map2 = DataUtils.convertListsToMap(years2, values2);
-		
+		Map<Number, Number> map2 = DataUtils.convertYearsAndValuesToMap(yearsAndValues2);
+		map2 = DataUtils.filter(start, end, map2);
+//		map2 = DataUtils.aggregateBy(aggr, map2);
+		List<Number> years2 = new ArrayList<Number>((map2.keySet()));
+
 		List<Number> commonYears = DataUtils.findCommons(years1, years2);
 		
 		List<Number> xValues = new ArrayList<Number>();
@@ -49,27 +50,28 @@ public class AppServiceImp implements AppService {
 			yValues.add(map2.get(year));
 		}
 
-		System.out.println(commonYears);
-		System.out.println(xValues);
-		System.out.println(yValues);
+//		System.out.println(commonYears);
+//		System.out.println(xValues);
+//		System.out.println(yValues);
 		return DataUtils.convertListsOfNumsToJSONStr(xValues, yValues);
 	}
 	
 	@Override
-	public String getDataForBarChart(List<String> countryNames, List<String> indicatorNames) {
+	public String getDataForBarChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
 		Map<String, HashMap<Number, Number>> data = new LinkedHashMap<>();
 		for (int i = 0; i < countryNames.size(); i++) {
 			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
-			List<Number> years = DataUtils.getNumbersAtIndex(yearsAndValues, 0);
-			List<Number> values = DataUtils.getNumbersAtIndex(yearsAndValues, 1);
-			data.put(countryNames.get(i)+i, DataUtils.convertListsToMap(years, values));	// the "+i" is used to diffrentiate the keys with the same name
+			Map<Number, Number> data2 = DataUtils.convertYearsAndValuesToMap(yearsAndValues);
+			Map<Number, Number> data3 = DataUtils.filter(start, end, data2);
+			Map<Number, Number> data4 = DataUtils.aggregateBy(aggr, data3);
+			data.put(countryNames.get(i)+i, (HashMap<Number, Number>) data4);	// the "+i" is used to diffrentiate the keys with the same name
 		}
 		BarChartFormatter bcf = new BarChartFormatter();
 		return bcf.getFormattedBarChartData(data);
 	}
 	
 	@Override
-	public String getDataForLineChart(List<String> countryNames, List<String> indicatorNames) {
+	public String getDataForLineChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
 		JSONArray array = new JSONArray();
 		array.put(getValuesByCountryAndIndicatorAsJSONStr(countryNames.get(0), indicatorNames.get(0)));
 		for (int i = 1; i < countryNames.size(); i++) {
@@ -89,10 +91,14 @@ public class AppServiceImp implements AppService {
 	private List<Object[]> getYearsAndValues(String countryName, String indicatorName) {
 		List<Object[]> yearsAndValues = null;
 		if (populationsService.getAllPopulationsIndicators().contains(indicatorName)) {
-			yearsAndValues = populationsService.getPopulationOfCountry(countryName, indicatorName);
+			yearsAndValues = populationsService.getPopulationOfCountry(countryName, indicatorName);			
 		} else if (indicatorValuesService.getAllIndicatorsNames().contains(indicatorName)) {
 			yearsAndValues = indicatorValuesService.getYearsAndValuesByCountryAndIndicatorNames(countryName, indicatorName);
 		}
+		
+//		if (yearsAndValues == null) {
+//			throw new RuntimeException("fdasfdsf.");
+//		}
 		return yearsAndValues;
 	}
 	

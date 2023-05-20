@@ -34,4 +34,10 @@ public class IndicatorValuesService {
 		int countryId = countryRepo.findIdByName(countryName);
 		return indicatorValuesRepo.findYearsAndValuesByCountryAndIndicator(countryId, indicatorId);
 	}
+	
+	public List<Object[]> getAVG(String countryName, String indicatorName, int aggrYears) {
+		int indicatorId = indicatorRepo.findIdByName(indicatorName);
+		int countryId = countryRepo.findIdByName(countryName);
+		return indicatorValuesRepo.findYearsAndValuesByCountryAndIndicator(countryId, indicatorId);
+	}
 }
