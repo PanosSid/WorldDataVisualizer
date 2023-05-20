@@ -1,6 +1,5 @@
 package com.mye030.world_data_visualizer.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class WorldDataVisualizerController {
 	
 	@GetMapping("/lineChart")
 	public ModelAndView viewLineChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) {
-		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr(countries, indicators);
+		String jsonString = appService.getDataForLineChart(countries, indicators);
         model.addAttribute("dataGiven", jsonString);
         model.addAttribute("countries", countries);
         model.addAttribute("indicators", indicators);
@@ -55,13 +54,13 @@ public class WorldDataVisualizerController {
 		return new ModelAndView("barchart", model);
 	}
 	
-	@GetMapping("/scatterPlot")
-	public ModelAndView viewScatterChart(/*@RequestParam("country") String country, @RequestParam("indicators") List<String> indicators, */ModelMap model) {
-		String country = "countryName";
-		List<String> indicators = Arrays.asList("indicator1", "indicator2");
-//		String jsonString = appService.getValuesByCountryAndIndicatorAsJSONStr(country, indicators);
-//		model.addAttribute("dataGiven", jsonString);
-		return new ModelAndView("scatter_plot", model);
+	@GetMapping("/scatterChart")
+	public ModelAndView viewScatterChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) {
+		String jsonString = appService.getDataForScatterChart(countries, indicators);
+        model.addAttribute("dataGiven", jsonString);
+        model.addAttribute("countries", countries);
+        model.addAttribute("indicators", indicators);
+		return new ModelAndView("scatterchart", model);
 	}
 	
 }

@@ -3,6 +3,7 @@ package com.mye030.world_data_visualizer.service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,8 +25,39 @@ public class AppServiceImp implements AppService {
 	@Autowired
 	private IndicatorValuesService indicatorValuesService; 
 	
+	
+	@Override
+	public String getDataForScatterChart(List<String> countryNames, List<String> indicatorNames) {	
+		List<Object[]> yearsAndValues1 = getYearsAndValues(countryNames.get(0), indicatorNames.get(0));
+		List<Number> years1 = DataUtils.getNumbersAtIndex(yearsAndValues1, 0);
+		List<Number> values1 = DataUtils.getNumbersAtIndex(yearsAndValues1, 1);
+		Map<Number, Number> map1 = DataUtils.convertListsToMap(years1, values1);
+		
+		
+		List<Object[]> yearsAndValues2 = getYearsAndValues(countryNames.get(0), indicatorNames.get(1));
+		List<Number> years2 = DataUtils.getNumbersAtIndex(yearsAndValues2, 0);
+		List<Number> values2 = DataUtils.getNumbersAtIndex(yearsAndValues2, 1);
+		Map<Number, Number> map2 = DataUtils.convertListsToMap(years2, values2);
+		
+		List<Number> commonYears = DataUtils.findCommons(years1, years2);
+		
+		List<Number> xValues = new ArrayList<Number>();
+		List<Number> yValues = new ArrayList<Number>();
+		
+		for (Number year : commonYears) {
+			xValues.add(map1.get(year));
+			yValues.add(map2.get(year));
+		}
+
+		System.out.println(commonYears);
+		System.out.println(xValues);
+		System.out.println(yValues);
+		return DataUtils.convertListsOfNumsToJSONStr(xValues, yValues);
+	}
+	
+	@Override
 	public String getDataForBarChart(List<String> countryNames, List<String> indicatorNames) {
-		Map<String, HashMap<Number, Number>> data = new HashMap<>();
+		Map<String, HashMap<Number, Number>> data = new LinkedHashMap<>();
 		for (int i = 0; i < countryNames.size(); i++) {
 			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
 			List<Number> years = DataUtils.getNumbersAtIndex(yearsAndValues, 0);
@@ -36,8 +68,8 @@ public class AppServiceImp implements AppService {
 		return bcf.getFormattedBarChartData(data);
 	}
 	
-	
-	public String getValuesByCountryAndIndicatorAsJSONStr(List<String> countryNames, List<String> indicatorNames) {
+	@Override
+	public String getDataForLineChart(List<String> countryNames, List<String> indicatorNames) {
 		JSONArray array = new JSONArray();
 		array.put(getValuesByCountryAndIndicatorAsJSONStr(countryNames.get(0), indicatorNames.get(0)));
 		for (int i = 1; i < countryNames.size(); i++) {

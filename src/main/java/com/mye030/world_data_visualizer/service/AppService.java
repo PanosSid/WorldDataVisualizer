@@ -8,8 +8,10 @@ public interface AppService {
 	
 	List<String> getAllCountryNames();
 	
-	String getValuesByCountryAndIndicatorAsJSONStr(List<String> countries, List<String> indicators);
+	String getDataForLineChart(List<String> countries, List<String> indicators);
 	
 	String getDataForBarChart(List<String> countryNames, List<String> indicatorNames);
+
+	String getDataForScatterChart(List<String> countryNames, List<String> indicatorNames);
 	
 }
