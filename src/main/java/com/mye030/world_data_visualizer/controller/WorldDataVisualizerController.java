@@ -2,13 +2,15 @@ package com.mye030.world_data_visualizer.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mye030.world_data_visualizer.model.FormData;
@@ -30,36 +32,38 @@ public class WorldDataVisualizerController {
 	}
 		
 	@PostMapping("/generateChart")
-	public ModelAndView generateChart(@RequestBody FormData formData, ModelMap model) {
-		model.addAttribute("indicators", formData.getIndicators());
-		model.addAttribute("countries", formData.getCountries());
-        return new ModelAndView("redirect:/"+formData.getChartType()+"Chart", model);
+	public String generateChart(@RequestBody FormData formData, HttpSession session) {
+		session.setAttribute("formData", formData);
+		return "redirect:/"+formData.getChartType()+"Chart";
 	}
 	
 	@GetMapping("/lineChart")
-	public ModelAndView viewLineChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) {
-		String jsonString = appService.getDataForLineChart(countries, indicators);
+	public ModelAndView viewLineChart(HttpSession session, ModelMap model) {
+		FormData formData = (FormData) session.getAttribute("formData");
+		String jsonString = appService.getDataForLineChart(formData.getCountries(), formData.getIndicators());
         model.addAttribute("dataGiven", jsonString);
-        model.addAttribute("countries", countries);
-        model.addAttribute("indicators", indicators);
+        model.addAttribute("countries", formData.getCountries());
+        model.addAttribute("indicators", formData.getIndicators());
 		return new ModelAndView("linechart", model);
 	}
 	
 	@GetMapping("/barChart")
-	public ModelAndView viewBarChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) { 
-		String jsonString = appService.getDataForBarChart(countries, indicators);
+	public ModelAndView viewBarChart(HttpSession session, ModelMap model) { 
+		FormData formData = (FormData) session.getAttribute("formData");
+		String jsonString = appService.getDataForBarChart(formData.getCountries(), formData.getIndicators());
         model.addAttribute("dataGiven", jsonString);
-        model.addAttribute("countries", countries);
-        model.addAttribute("indicators", indicators);
+        model.addAttribute("countries", formData.getCountries());
+        model.addAttribute("indicators", formData.getIndicators());
 		return new ModelAndView("barchart", model);
 	}
 	
 	@GetMapping("/scatterChart")
-	public ModelAndView viewScatterChart(@RequestParam("countries") List<String> countries, @RequestParam("indicators") List<String> indicators, ModelMap model) {
-		String jsonString = appService.getDataForScatterChart(countries, indicators);
+	public ModelAndView viewScatterChart(HttpSession session, ModelMap model) {
+		FormData formData = (FormData) session.getAttribute("formData");
+		String jsonString = appService.getDataForScatterChart(formData.getCountries(), formData.getIndicators());
         model.addAttribute("dataGiven", jsonString);
-        model.addAttribute("countries", countries);
-        model.addAttribute("indicators", indicators);
+        model.addAttribute("countries", formData.getCountries());
+        model.addAttribute("indicators", formData.getIndicators());
 		return new ModelAndView("scatterchart", model);
 	}
 	
