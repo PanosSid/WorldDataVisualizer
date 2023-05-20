@@ -94,16 +94,27 @@
       .domain([0, d3.max(data, function (d) { return d3.max(d.bars, function (d) { return d.value; }); })])
       .rangeRound([height, 0]);
 
-    svg
+     /* svg
       .append("g")
       .attr("class", "x-axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x0));
+      .call(d3.axisBottom(x0)); */
     
+      svg.append("g")
+      .attr("class", "axis")
+//      .attr("transform", `translate(${margin.left}, ${margin.top + innerHeight})`)
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x0))
+      .selectAll("text")
+      .attr("transform", "rotate(90)")
+      .attr("dy", "-0.5em")
+      .attr("dx", "3em")
+      .style("text-anchor", "end");
+      
     // Add x axis label	
     svg.append("text")
       .attr("class", "axis-label")
-      .attr("transform", `translate(${margin.left + innerWidth / 2}, ${height - bottom+90})`)
+      .attr("transform", `translate(${margin.left + innerWidth / 2}, ${height - bottom+100})`)
       .style("text-anchor", "middle")
       .text("Years");
 

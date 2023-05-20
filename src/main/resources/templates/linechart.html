@@ -138,11 +138,21 @@
     // Create y axis
     const yAxis = d3.axisLeft(yScale);
 
-    // Append x axis to the chart
+ // Append x axis to the chart
     svg.append("g")
       .attr("class", "axis")
       .attr("transform", `translate(${margin.left}, ${margin.top + innerHeight})`)
       .call(xAxis);
+    
+    /* svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", `translate(${margin.left}, ${margin.top + innerHeight})`)
+    .call(xAxis)
+    .selectAll("text")
+    .attr("transform", "rotate(90)")
+    .attr("dy", "-0.5em")
+    .attr("dx", "3em")
+    .style("text-anchor", "end"); */
 
     // Append y axis to the chart
     svg.append("g")
