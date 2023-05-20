@@ -55,6 +55,19 @@ $(document).ready(function() {
 		    }
 		});
 		
+		if (chartType == "scatter"){
+			if (formData.countries.length > 2 ){
+				alert("To generate a scatter plot, it is necessary to select two pairs of countries and indicators," +
+						" where the countries chosen for comparison are the same.");
+				return;
+			}
+			if (formData.countries[0] != formData.countries[1]){
+				alert("To generate a Scatter Chart the selected countries should be the same!");
+				return;
+			}
+			
+		}
+		
 		fetch('/generateChart', {
 			  method: 'POST',
 			  headers: {
