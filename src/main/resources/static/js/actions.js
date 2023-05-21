@@ -63,7 +63,7 @@ $(document).ready(function() {
 				});
 				
 				if (chartType == "scatter"){
-					if (formData.countries.length != 2 ){
+					if (formData.countries.length % 2 != 0){
 						alert("To generate a scatter plot, it is necessary to select two pairs of countries and indicators," +
 								" where the countries chosen for comparison are the same.");
 						return;
