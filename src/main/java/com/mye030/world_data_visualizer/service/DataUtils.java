@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,18 +54,26 @@ public class DataUtils {
 	public static List<Number> findCommons(List<Number> list1, List<Number> list2) {
 		List<Number> commonYears = new ArrayList<Number>(list1);
 		commonYears.retainAll(list2);
-
-		Collections.sort(commonYears, new Comparator<Number>() {
-			@Override
-			public int compare(Number n1, Number n2) {
-				return n1.intValue() - n2.intValue();
-			}
-		});
-
+		sortListOfNums(commonYears);
 		return commonYears;
 	}
+	
+	public static void sortListOfNums(List<Number> commonYears) {
+		Collections.sort(commonYears, new Comparator<Number>() {
+            @Override
+            public int compare(Number n1, Number n2) {
+                return n1.intValue() - n2.intValue();
+            }
+        });
+	}
+	
+	public static void aggregateDataBy(int aggr, Map<String, HashMap<Number, Number>> data) {
+		for (String key: data.keySet()) {
+			data.put(key, (HashMap<Number, Number>) aggregateMapBy(aggr, data.get(key)));
+		}
+	}
 
-	public static Map<Number, Number> aggregateBy(int aggr, Map<Number, Number> dataMap) {
+	public static Map<Number, Number> aggregateMapBy(int aggr, Map<Number, Number> dataMap) {
 		if (aggr <= 0 || dataMap.keySet().size() < 10 ) {
 			return dataMap;
 		}
