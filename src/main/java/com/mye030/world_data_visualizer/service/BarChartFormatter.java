@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class BarChartFormatter {
 	
 	public String getFormattedBarChartData(int aggr, Map<String, HashMap<Number, Number>> data) {
-		subsetDataForCommonYears(data);
+		DataUtils.subsetDataForCommonYears(data);
 		DataUtils.aggregateDataBy(aggr, data);
 		List<Number> aggrCommonYears = getAggregatedYears(data);
 		JSONArray array = new JSONArray();
@@ -27,13 +27,7 @@ public class BarChartFormatter {
 		return array.toString();
 	}
 	
-	private void subsetDataForCommonYears(Map<String, HashMap<Number, Number>> data) {
-		List<Number> commonYears = findCommonYears(data);
-		for (String key : data.keySet()) {
-			data.get(key).keySet().retainAll(commonYears);
-		}
-	}
-	
+
 	private List<Number> getAggregatedYears(Map<String, HashMap<Number, Number>> data) {
 		Entry<String, HashMap<Number, Number>> entry = data.entrySet().iterator().next();
 		String key = entry.getKey();
@@ -42,15 +36,6 @@ public class BarChartFormatter {
 		return years;
 	}
 
-	private List<Number> findCommonYears(Map<String, HashMap<Number, Number>> data) {
-		List<String> countryNames = new ArrayList<String>(data.keySet());
-		List<Number> commonYears = new ArrayList<Number>(data.get(countryNames.get(0)).keySet());
-		for (int i = 1; i < countryNames.size(); i++) {
-			commonYears.retainAll(data.get(countryNames.get(i)).keySet());
-		}
-		DataUtils.sortListOfNums(commonYears);
-		return commonYears;
-	}
 
 	private JSONArray addValuesToBarsAsJSONStr(Map<String, HashMap<Number, Number>> dataMap, int year) {
 		JSONArray barsArray = new JSONArray();

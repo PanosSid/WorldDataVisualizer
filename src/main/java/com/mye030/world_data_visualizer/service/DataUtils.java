@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,13 +31,18 @@ public class DataUtils {
 		}
 		return array.toString();
 	}
-
-	public static HashMap<Number, Number> convertListsToMap(List<Number> years, List<Number> values) {
-		HashMap<Number, Number> result = new HashMap<Number, Number>();
-		for (int i = 0; i < years.size(); i++) {
-			result.put(years.get(i), values.get(i));
+	
+	public static String convertMapOfNumsToJSONStr(Map<Number, Number> map) {
+		JSONArray array = new JSONArray();		
+		List<Number> keys = new ArrayList<Number>(map.keySet()); 
+		DataUtils.sortListOfNums(keys);
+		for (Number key: keys) {
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("x", key);
+			jsonObj.put("y", map.get(key));
+			array.put(jsonObj);
 		}
-		return result;
+		return array.toString();
 	}
 
 	public static Map<Number, Number> convertYearsAndValuesToMap(List<Object[]> yearsAndValues) {
@@ -50,6 +54,24 @@ public class DataUtils {
 		}
 		return result;
 	}
+	
+	public static void subsetDataForCommonYears(Map<String, HashMap<Number, Number>> data) {
+		List<Number> commonYears = findCommonYears(data);
+		for (String key : data.keySet()) {
+			data.get(key).keySet().retainAll(commonYears);
+		}
+	}
+	
+	public static List<Number> findCommonYears(Map<String, HashMap<Number, Number>> data) {
+		List<String> countryNames = new ArrayList<String>(data.keySet());
+		List<Number> commonYears = new ArrayList<Number>(data.get(countryNames.get(0)).keySet());
+		for (int i = 1; i < countryNames.size(); i++) {
+			commonYears.retainAll(data.get(countryNames.get(i)).keySet());
+		}
+		DataUtils.sortListOfNums(commonYears);
+		return commonYears;
+	}
+	
 
 	public static List<Number> findCommons(List<Number> list1, List<Number> list2) {
 		List<Number> commonYears = new ArrayList<Number>(list1);
