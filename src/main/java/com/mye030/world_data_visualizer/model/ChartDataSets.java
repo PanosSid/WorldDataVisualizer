@@ -10,8 +10,6 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.mye030.world_data_visualizer.service.DataUtils;
-
 public class ChartDataSets {
 	private String chartType;
 	private List<ChartData> dataList;
@@ -57,7 +55,7 @@ public class ChartDataSets {
 		for (int i = 1; i < dataList.size(); i++) {
 			commonYears.retainAll(dataList.get(i).getYears());
 		}
-		DataUtils.sortListOfNums(commonYears);
+		sortListOfNums(commonYears);
 		return commonYears;
 	}
 	

@@ -1,7 +1,6 @@
 package com.mye030.world_data_visualizer.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -10,8 +9,6 @@ import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import com.mye030.world_data_visualizer.service.DataUtils;
 
 public class ChartData {
 	private String countryName;
