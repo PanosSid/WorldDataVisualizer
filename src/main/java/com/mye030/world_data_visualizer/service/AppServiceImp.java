@@ -11,6 +11,8 @@ import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mye030.world_data_visualizer.model.ChartData;
+import com.mye030.world_data_visualizer.model.ChartDataSets;
 import com.mye030.world_data_visualizer.repository.CountryMetadataRepository;
 
 @Service
@@ -66,20 +68,14 @@ public class AppServiceImp implements AppService {
 	
 	@Override
 	public String getDataForLineChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
-		Map<String, HashMap<Number, Number>> data = new LinkedHashMap<>();
+		ChartDataSets datasets = new ChartDataSets("line");
 		for (int i = 0; i < countryNames.size(); i++) {
-			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
-			Map<Number, Number> data2 = DataUtils.convertYearsAndValuesToMap(yearsAndValues);
-			Map<Number, Number> data3 = DataUtils.filter(start, end, data2);
-			data.put(countryNames.get(i)+i, (HashMap<Number, Number>) data3);	// the "+i" is used to diffrentiate the keys with the same name				
+			ChartData chartData = getChartDataFromDb(countryNames.get(i), indicatorNames.get(i));
+			datasets.addChartData(chartData);		
 		}
-		DataUtils.aggregateDataBy(aggr, data);
-		
-		JSONArray array = new JSONArray();		
-		for (String country: data.keySet()) {
-			array.put(DataUtils.convertMapOfNumsToJSONStr(data.get(country)));
-		}		
-		return array.toString();
+		datasets.filter(start, end);
+		datasets.aggregateBy(aggr);
+		return datasets.convertToJSONStr();
 	}
 	
 	private List<Object[]> getYearsAndValues(String countryName, String indicatorName) {
@@ -94,6 +90,20 @@ public class AppServiceImp implements AppService {
 //			throw new RuntimeException("fdasfdsf.");
 //		}
 		return yearsAndValues;
+	}
+	
+	private ChartData getChartDataFromDb(String countryName, String indicatorName) {
+		List<Object[]> yearsAndValues = null;
+		if (populationsService.getAllPopulationsIndicators().contains(indicatorName)) {
+			yearsAndValues = populationsService.getPopulationOfCountry(countryName, indicatorName);			
+		} else if (indicatorValuesService.getAllIndicatorsNames().contains(indicatorName)) {
+			yearsAndValues = indicatorValuesService.getYearsAndValuesByCountryAndIndicatorNames(countryName, indicatorName);
+		}
+		
+//		if (yearsAndValues == null) {
+//			throw new RuntimeException("fdasfdsf.");
+//		}
+		return new ChartData(countryName, indicatorName, yearsAndValues);
 	}
 	
 	@Override
