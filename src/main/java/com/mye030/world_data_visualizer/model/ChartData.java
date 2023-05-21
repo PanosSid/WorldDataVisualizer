@@ -1,6 +1,7 @@
 package com.mye030.world_data_visualizer.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -119,5 +120,12 @@ public class ChartData {
 	public void retainCommonsYears(List<Number> commonYears) {
 		yearsAndValues.keySet().retainAll(commonYears);
 		
+	}
+
+	public JSONObject convertToBarJSONObj(int year, int i) {
+		JSONObject obj = new JSONObject();
+		obj.put("name", countryName+i);
+		obj.put("value", yearsAndValues.get(year));
+		return obj;
 	}
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,15 +56,24 @@ public class AppServiceImp implements AppService {
 	
 	@Override
 	public String getDataForBarChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
-		Map<String, HashMap<Number, Number>> data = new LinkedHashMap<>();
+//		Map<String, HashMap<Number, Number>> data = new LinkedHashMap<>();
+//		for (int i = 0; i < countryNames.size(); i++) {
+//			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
+//			Map<Number, Number> data2 = DataUtils.convertYearsAndValuesToMap(yearsAndValues);
+//			Map<Number, Number> data3 = DataUtils.filter(start, end, data2);
+//			data.put(countryNames.get(i)+i, (HashMap<Number, Number>) data3);	// the "+i" is used to diffrentiate the keys with the same name
+//		}
+//		BarChartFormatter bcf = new BarChartFormatter();
+//		return bcf.getFormattedBarChartData(aggr, data);
+		
+		ChartDataSets datasets = new ChartDataSets("bar");
 		for (int i = 0; i < countryNames.size(); i++) {
-			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
-			Map<Number, Number> data2 = DataUtils.convertYearsAndValuesToMap(yearsAndValues);
-			Map<Number, Number> data3 = DataUtils.filter(start, end, data2);
-			data.put(countryNames.get(i)+i, (HashMap<Number, Number>) data3);	// the "+i" is used to diffrentiate the keys with the same name
+			ChartData chartData = getChartDataFromDb(countryNames.get(i), indicatorNames.get(i));
+			datasets.addChartData(chartData);
 		}
-		BarChartFormatter bcf = new BarChartFormatter();
-		return bcf.getFormattedBarChartData(aggr, data);
+		datasets.filter(start, end);
+		datasets.aggregateBy(aggr);
+		return datasets.convertToBarChartJSONStr();
 	}
 	
 	@Override

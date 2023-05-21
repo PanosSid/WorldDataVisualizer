@@ -3,10 +3,13 @@ package com.mye030.world_data_visualizer.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import com.mye030.world_data_visualizer.service.DataUtils;
 
@@ -24,6 +27,9 @@ public class ChartDataSets {
 	}
 	
 	public void aggregateBy(int aggr) {
+		if (aggr <= 0) {
+			return;
+		}
 		for (ChartData cd : dataList) {
 			cd.aggregateBy(aggr);
 		}
@@ -57,6 +63,29 @@ public class ChartDataSets {
 			array.put(cd.convertToJSONStr());
 		}		
 		return array.toString();
+	}
+	
+	public String convertToBarChartJSONStr() {
+		List<Number> commonYears = findCommonYears();
+		JSONArray array = new JSONArray();
+		for (Number year : commonYears) {
+			JSONObject obj = new JSONObject();
+			obj.put("group", year);
+			obj.put("bars", getBarsFromChartData((int) year));
+			array.put(obj);
+		}
+		return array.toString();
+	}
+	
+	private JSONArray getBarsFromChartData(int year) {
+		JSONArray barsArray = new JSONArray();
+		int i = 0;
+		for (ChartData cd : dataList) {
+			barsArray.put(cd.convertToBarJSONObj(year, i));
+			i++;
+		}
+		return barsArray;
+		
 	}
 	
 	public void sortListOfNums(List<Number> commonYears) {
