@@ -39,7 +39,8 @@ public class WorldDataVisualizerController {
 	@GetMapping("/lineChart")
 	public ModelAndView viewLineChart(HttpSession session, ModelMap model) {
 		FormData formData = (FormData) session.getAttribute("formData");
-		String jsonString = appService.getDataForLineChart(formData.getCountries(), formData.getIndicators(), 5, -1, -1);
+		String jsonString = appService.getDataForLineChart(formData.getCountries(), formData.getIndicators(),
+				formData.getAggregate(), formData.getMinYear(),formData.getMaxYear());
         model.addAttribute("dataGiven", jsonString);
         model.addAttribute("countries", formData.getCountries());
         model.addAttribute("indicators", formData.getIndicators());
@@ -49,7 +50,8 @@ public class WorldDataVisualizerController {
 	@GetMapping("/barChart")
 	public ModelAndView viewBarChart(HttpSession session, ModelMap model) { 
 		FormData formData = (FormData) session.getAttribute("formData");
-		String jsonString = appService.getDataForBarChart(formData.getCountries(), formData.getIndicators(), 5, 2000, 2025);
+		String jsonString = appService.getDataForBarChart(formData.getCountries(), formData.getIndicators(),
+				formData.getAggregate(), formData.getMinYear(), formData.getMaxYear());
         model.addAttribute("dataGiven", jsonString);
         model.addAttribute("countries", formData.getCountries());
         model.addAttribute("indicators", formData.getIndicators());
@@ -59,10 +61,11 @@ public class WorldDataVisualizerController {
 	@GetMapping("/scatterChart")
 	public ModelAndView viewScatterChart(HttpSession session, ModelMap model) {
 		FormData formData = (FormData) session.getAttribute("formData");
-		String jsonString = appService.getDataForScatterChart(formData.getCountries(), formData.getIndicators(), -1, 2000, 2005);
-        model.addAttribute("dataGiven", jsonString);
-        model.addAttribute("countries", formData.getCountries());
-        model.addAttribute("indicators", formData.getIndicators());
+		String jsonString = appService.getDataForScatterChart(formData.getCountries(), formData.getIndicators(),
+				formData.getAggregate(), formData.getMinYear(), formData.getMaxYear());
+		model.addAttribute("dataGiven", jsonString);
+		model.addAttribute("countries", formData.getCountries());
+		model.addAttribute("indicators", formData.getIndicators());
 		return new ModelAndView("scatterchart", model);
 	}
 	

@@ -8,10 +8,10 @@ public interface AppService {
 	
 	List<String> getAllCountryNames();
 	
-	String getDataForLineChart(List<String> countries, List<String> indicators, int i, int j, int k);
+	String getDataForLineChart(List<String> countries, List<String> indicators, int aggr, int minYear, int maxYear);
 
-	String getDataForBarChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end);
+	String getDataForBarChart(List<String> countryNames, List<String> indicatorNames, int aggr, int minYear, int maxYear);
 
-	String getDataForScatterChart(List<String> countries, List<String> indicators, int i, int j, int k);
+	String getDataForScatterChart(List<String> countries, List<String> indicators, int aggr, int minYear, int maxYear);
 	
 }

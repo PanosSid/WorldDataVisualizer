@@ -63,18 +63,16 @@ public class AppServiceImp implements AppService {
 			List<Object[]> yearsAndValues = getYearsAndValues(countryNames.get(i), indicatorNames.get(i));
 			Map<Number, Number> data2 = DataUtils.convertYearsAndValuesToMap(yearsAndValues);
 			Map<Number, Number> data3 = DataUtils.filter(start, end, data2);
-			Map<Number, Number> data4 = DataUtils.aggregateBy(aggr, data3);
-			data.put(countryNames.get(i)+i, (HashMap<Number, Number>) data4);	// the "+i" is used to diffrentiate the keys with the same name
+			data.put(countryNames.get(i)+i, (HashMap<Number, Number>) data3);	// the "+i" is used to diffrentiate the keys with the same name
 		}
 		BarChartFormatter bcf = new BarChartFormatter();
-		return bcf.getFormattedBarChartData(data);
+		return bcf.getFormattedBarChartData(aggr, data);
 	}
 	
 	@Override
 	public String getDataForLineChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
 		JSONArray array = new JSONArray();
-		array.put(getValuesByCountryAndIndicatorAsJSONStr(countryNames.get(0), indicatorNames.get(0)));
-		for (int i = 1; i < countryNames.size(); i++) {
+		for (int i = 0; i < countryNames.size(); i++) {
 			array.put(getValuesByCountryAndIndicatorAsJSONStr(countryNames.get(i), indicatorNames.get(i)));
 			
 		}

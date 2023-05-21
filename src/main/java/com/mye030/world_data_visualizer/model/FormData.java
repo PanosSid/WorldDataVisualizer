@@ -62,7 +62,7 @@ public class FormData {
 		this.maxYear = maxYear;
 	}
 
-	public int isAggregate() {
+	public int getAggregate() {
 		return aggregate;
 	}
 
