@@ -27,6 +27,10 @@ public class ChartData {
 			this.yearsAndValues.put((Number) obj[0], (Number) obj[1]);
 		}
 	}
+	
+	public String getCountryName() {
+		return countryName;
+	}
 
 	public List<Number> getYears(){
 		return new ArrayList<Number>(yearsAndValues.keySet());
@@ -98,7 +102,7 @@ public class ChartData {
 	public String convertToJSONStr() {
 		JSONArray array = new JSONArray();		
 		List<Number> keys = new ArrayList<Number>(yearsAndValues.keySet()); 
-		DataUtils.sortListOfNums(keys);
+		sortListOfNums(keys);
 		for (Number key: keys) {
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("x", key);
@@ -128,4 +132,5 @@ public class ChartData {
 		obj.put("value", yearsAndValues.get(year));
 		return obj;
 	}
+
 }

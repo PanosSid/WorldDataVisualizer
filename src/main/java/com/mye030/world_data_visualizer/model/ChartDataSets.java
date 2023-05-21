@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +15,11 @@ import com.mye030.world_data_visualizer.service.DataUtils;
 public class ChartDataSets {
 	private String chartType;
 	private List<ChartData> dataList;
+	
+	public ChartDataSets() {
+		this.chartType = "";
+		dataList = new ArrayList<ChartData>();
+	}
 	
 	public ChartDataSets(String chartType) {
 		this.chartType = chartType;
@@ -96,4 +100,68 @@ public class ChartDataSets {
             }
         });
 	}
+
+	public String convertToScatterChartJSONStr() {
+		Map<String, List<ChartData>> map = new HashMap<>();
+		for (ChartData cd : dataList) {
+			map.put(cd.getCountryName(), new ArrayList<ChartData>());
+		}
+		for (ChartData cd : dataList) {
+			List<ChartData> list = map.get(cd.getCountryName());
+			if (list.size () < 2) {
+				list.add(cd);				
+			} else {
+				throw new RuntimeException("Scatter plot more than 2 data with the country name");
+			}
+		}
+		JSONArray outerArray = new JSONArray();	
+		for (String countryName : map.keySet()) {
+			List<Number> xValues = map.get(countryName).get(0).getValues();
+			List<Number> yValues = map.get(countryName).get(1).getValues();
+			JSONArray array = new JSONArray();
+			for (int i = 0; i < xValues.size(); i++) {
+				JSONObject jsonObj = new JSONObject();
+				jsonObj.put("x", xValues.get(i));
+				jsonObj.put("y", yValues.get(i));
+				array.put(jsonObj);
+			}
+			outerArray.put(array);
+		}
+		return outerArray.toString();
+	}
+	
+//	public String convertToScatterJSONStr() {
+//		JSONArray array = new JSONArray();	
+//		for (ChartData cd : dataList) {
+//			array.put(cd.convertToJSONStr());
+//		}		
+//		return array.toString();
+//	}
+	
+	public String convertListsOfNumsToJSONStr(List<Number> xValues, List<Number> yValues) {
+		JSONArray array = new JSONArray();
+		for (int i = 0; i < xValues.size(); i++) {
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("x", xValues.get(i));
+			jsonObj.put("y", yValues.get(i));
+			array.put(jsonObj);
+		}
+		return array.toString();
+	}
+
+//	DataUtils.subsetDataForCommonYears(data);
+//	DataUtils.aggregateDataBy(aggr, data);
+//	
+//	List<Number> commonYears = DataUtils.findCommonYears(data);
+//
+//	Map<Number, Number> map1 = data.get(countryNames.get(0) + "0");
+//	Map<Number, Number> map2 = data.get(countryNames.get(1) + "1");
+//	List<Number> xValues = new ArrayList<Number>();
+//	List<Number> yValues = new ArrayList<Number>();
+//	for (Number year : commonYears) {
+//		xValues.add(map1.get(year));
+//		yValues.add(map2.get(year));
+//	}
+//	return DataUtils.convertListsOfNumsToJSONStr(xValues, yValues);
+	
 }
