@@ -1,8 +1,11 @@
 package com.mye030.world_data_visualizer.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -85,6 +88,15 @@ public class AppServiceImp implements AppService {
 			throw new DataNotFoundException(countryName, indicatorName);
 		}
 		return new ChartData(countryName, indicatorName, yearsAndValues);
+	}
+
+	@Override
+	public Map<String, List<String>> getCountriesAndTheirIndicators() {
+		Map<String, List<String>> map = new HashMap<>();
+		map.put("country1", Arrays.asList("indicator1"));
+		map.put("country2", Arrays.asList("indicator1", "indicator2"));
+		map.put("country3", Arrays.asList("indicator1", "indicator2","indicator3" ));
+		return map;
 	}
 	
 }
