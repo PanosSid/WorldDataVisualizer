@@ -84,9 +84,14 @@ public class ChartData {
 	}
 
 	public void filter(int start, int end) {
-		if (start <=0 || end <= 0 || yearsAndValues.keySet().size() < 10) {
+		if (start <= 0 && end <= 0) {
 			return;
+		} else if (start <= 0 && end >0) {
+			start = Integer.MIN_VALUE;
+		} else if (start > 0 && end <=0) {
+			end = Integer.MAX_VALUE;
 		}
+		
 		Map<Number, Number> filteredData = new LinkedHashMap<Number, Number>();
 		for (Number year : yearsAndValues.keySet()) {
 			if (start <= year.intValue() && year.intValue() <= end) {

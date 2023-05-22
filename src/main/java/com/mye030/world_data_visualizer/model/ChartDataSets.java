@@ -38,6 +38,9 @@ public class ChartDataSets {
 	}
 	
 	public void filter(int minYear, int maxYear) {
+		if (minYear <= 0 && maxYear <= 0) {
+			return;
+		}
 		for (ChartData cd : dataList) {
 			cd.filter(minYear, maxYear);
 		}
@@ -127,15 +130,7 @@ public class ChartDataSets {
 		}
 		return outerArray.toString();
 	}
-	
-//	public String convertToScatterJSONStr() {
-//		JSONArray array = new JSONArray();	
-//		for (ChartData cd : dataList) {
-//			array.put(cd.convertToJSONStr());
-//		}		
-//		return array.toString();
-//	}
-	
+
 	public String convertListsOfNumsToJSONStr(List<Number> xValues, List<Number> yValues) {
 		JSONArray array = new JSONArray();
 		for (int i = 0; i < xValues.size(); i++) {
@@ -146,20 +141,5 @@ public class ChartDataSets {
 		}
 		return array.toString();
 	}
-
-//	DataUtils.subsetDataForCommonYears(data);
-//	DataUtils.aggregateDataBy(aggr, data);
-//	
-//	List<Number> commonYears = DataUtils.findCommonYears(data);
-//
-//	Map<Number, Number> map1 = data.get(countryNames.get(0) + "0");
-//	Map<Number, Number> map2 = data.get(countryNames.get(1) + "1");
-//	List<Number> xValues = new ArrayList<Number>();
-//	List<Number> yValues = new ArrayList<Number>();
-//	for (Number year : commonYears) {
-//		xValues.add(map1.get(year));
-//		yValues.add(map2.get(year));
-//	}
-//	return DataUtils.convertListsOfNumsToJSONStr(xValues, yValues);
 	
 }
