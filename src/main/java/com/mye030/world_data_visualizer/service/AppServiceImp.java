@@ -81,9 +81,9 @@ public class AppServiceImp implements AppService {
 			yearsAndValues = indicatorValuesService.getYearsAndValuesByCountryAndIndicatorNames(countryName, indicatorName);
 		}
 		
-//		if (yearsAndValues == null) {
-//			throw new RuntimeException("fdasfdsf.");
-//		}
+		if (yearsAndValues == null || yearsAndValues.isEmpty()) {
+			throw new DataNotFoundException(countryName, indicatorName);
+		}
 		return new ChartData(countryName, indicatorName, yearsAndValues);
 	}
 	
