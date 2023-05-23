@@ -13,7 +13,7 @@ import com.mye030.world_data_visualizer.repository.CountryMetadataRepository;
 import com.mye030.world_data_visualizer.repository.PopulationsRepository;
 
 @Service
-public class PopulationsService {
+public class PopulationsServiceImp implements PopulationService {
 
 	@Autowired 
 	private PopulationsRepository populationsRepo;
@@ -24,7 +24,7 @@ public class PopulationsService {
 	private Map<String, Integer> indicatorAgeMap;
 	private List<String> allAgesPopulationIndicators;
 			
-	public PopulationsService() {
+	public PopulationsServiceImp() {
 		allAgesPopulationIndicators = Arrays.asList("Total population all ages",
 				"Male population all ages", "Female population all ages");
 		initPopulationIndicatorsPerAge();
@@ -41,6 +41,7 @@ public class PopulationsService {
 		}
 	}
 	
+	@Override
 	public List<String> getAllPopulationsIndicators(){
 		List<String> populationsIndicators = new ArrayList<String>();
 		populationsIndicators.addAll(allAgesPopulationIndicators);
@@ -48,6 +49,7 @@ public class PopulationsService {
 		return populationsIndicators;
 	}
 	
+	@Override
 	public List<Object[]> getPopulationOfCountry(String countryName, String indicatorName) {
 		int countryId = countryRepo.findIdByName(countryName);
 		return getPopulationBasedOnIndicator(indicatorName, countryId);

@@ -21,7 +21,7 @@ public class AppServiceImp implements AppService {
 	private CountryMetadataRepository countryRepo;
 	
 	@Autowired
-	private PopulationsService populationsService;
+	private PopulationService populationsService;
 	
 	@Autowired
 	private IndicatorValuesService indicatorValuesService; 
