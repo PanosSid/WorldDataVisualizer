@@ -62,10 +62,10 @@ public class PopulationsService {
 	}
 
 	private List<Object[]> getPopulationBasedOnGender(String indicatorName, int countryId) {
-		if (indicatorName.startsWith("Male")) {
-			return populationsRepo.getPopulationForCountryAndSex(countryId, "M");
+		if (indicatorName.startsWith("Male")) {			
+			return populationsRepo.getMalePopulationForCountry(countryId);
 		} else if (indicatorName.startsWith("Female")) {
-			return populationsRepo.getPopulationForCountryAndSex(countryId, "F");
+			return populationsRepo.getFemalePopulationForCountry(countryId);
 		} else {
 			return populationsRepo.getTotalPopulationForCountry(countryId);
 		}
@@ -73,9 +73,9 @@ public class PopulationsService {
 	
 	private List<Object[]> getPopulationForGenderAndAge(String indicatorName, int countryId) {	
 		if (indicatorName.startsWith("Male")) {
-			return populationsRepo.getPopulationForCountryAndAgeAndSex(countryId, indicatorAgeMap.get(indicatorName), "M");
+			return populationsRepo.getMalePopulationForCountryAndAge(countryId, indicatorAgeMap.get(indicatorName));
 		} else if (indicatorName.startsWith("Female")) {
-			return populationsRepo.getPopulationForCountryAndAgeAndSex(countryId, indicatorAgeMap.get(indicatorName), "F");
+			return populationsRepo.getFemalePopulationForCountryAndAge(countryId, indicatorAgeMap.get(indicatorName));
 		} else {
 			return populationsRepo.getTotalPopulationForCountryAndAge(countryId, indicatorAgeMap.get(indicatorName));
 		}

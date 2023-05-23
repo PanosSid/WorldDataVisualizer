@@ -8,22 +8,20 @@ public class PopulationsId  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int countryId;
 	private int year;
-	private String sex;
 	private int age;
 	
 	public PopulationsId() {}
-	
-	public PopulationsId(int countryId, int year, String sex, int age) {
+
+	public PopulationsId(int countryId, int year, int age) {
 		super();
 		this.countryId = countryId;
 		this.year = year;
-		this.sex = sex;
 		this.age = age;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(age, countryId, sex, year);
+		return Objects.hash(age, countryId, year);
 	}
 
 	@Override
@@ -35,7 +33,7 @@ public class PopulationsId  implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		PopulationsId other = (PopulationsId) obj;
-		return age == other.age && countryId == other.countryId && Objects.equals(sex, other.sex) && year == other.year;
+		return age == other.age && countryId == other.countryId && year == other.year;
 	}
-
+	
 }

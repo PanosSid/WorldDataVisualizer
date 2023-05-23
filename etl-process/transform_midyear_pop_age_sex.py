@@ -9,7 +9,7 @@ def cleanMidyearPopulationAgeSex(cleandFilesPath):
     fileName = "midyear_population_age_sex"
     pivot_df = pd.read_csv(cleandFilesPath+'\cleaned_countries.csv')
     pivot_df = pivot_df[["ISO_Code", "FIPS"]]
-    indicator_ids_df = pd.read_csv("indicator-id-mapping.csv")
+    # indicator_ids_df = pd.read_csv("indicator-id-mapping.csv")
     print("Cleaning: midyear_population_age_sex.csv")
     df = pd.read_csv("extracted-data\\"+fileName+".csv", encoding="UTF8")
 
@@ -24,8 +24,21 @@ def cleanMidyearPopulationAgeSex(cleandFilesPath):
 
     df.rename(columns = {'ISO_Code':'country_id'}, inplace = True)
     df = df[['country_id', 'year', 'sex', 'age', 'population']]
-    df = df.sort_values(by=['country_id', 'year', 'age'], ascending=True)
-    df.to_csv(cleandFilesPath+"\clean_midyear_population_age_sex.csv", index=False)
+
+    # Group the data by country_id, year, age, and sex
+    grouped = df.groupby(['country_id', 'year', 'age', 'sex']).sum().reset_index()
+
+    # Pivot the data to have separate columns for male_population and female_population
+    pivoted = grouped.pivot_table(values='population', index=['country_id', 'year', 'age'],
+                              columns='sex', aggfunc=sum, fill_value=0).reset_index()
+
+    # Rename the columns to match the desired format
+    pivoted.columns = ['country_id', 'year', 'age','female_population',  'male_population']
+
+    
+    pivoted.to_csv(cleandFilesPath+"\clean_midyear_population_age_sex.csv", index=False)
+
+    # df.to_csv(cleandFilesPath+"\clean_midyear_population_age_sex.csv", index=False)
     print("--- Cleaning Completed ---")
 
 

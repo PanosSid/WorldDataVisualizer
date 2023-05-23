@@ -17,25 +17,24 @@ public class Populations {
 	@Id
 	@Column(name = "year")
 	private int year;
-	
-	@Id
-	@Column(name = "sex")
-	private String sex;
-	
+		
 	@Id
 	@Column(name = "age")
 	private int age;
 	
-	@Column(name = "population")
-	private double population;
+	@Column(name = "female_population")
+	private double femalePopulation;
 
-	public Populations(int countryId, int year, String sex, int age, double population) {
+	@Column(name = "male_population")
+	private double malePopulation;
+
+	public Populations(int countryId, int year, int age, double femalePopulation, double malePopulation) {
 		super();
 		this.countryId = countryId;
 		this.year = year;
-		this.sex = sex;
 		this.age = age;
-		this.population = population;
+		this.femalePopulation = femalePopulation;
+		this.malePopulation = malePopulation;
 	}
 
 	public int getCountryId() {
@@ -54,14 +53,6 @@ public class Populations {
 		this.year = year;
 	}
 
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
 	public int getAge() {
 		return age;
 	}
@@ -70,20 +61,26 @@ public class Populations {
 		this.age = age;
 	}
 
-	public double getPopulation() {
-		return population;
+	public double getFemalePopulation() {
+		return femalePopulation;
 	}
 
-	public void setPopulation(double population) {
-		this.population = population;
+	public void setFemalePopulation(double femalePopulation) {
+		this.femalePopulation = femalePopulation;
+	}
+
+	public double getMalePopulation() {
+		return malePopulation;
+	}
+
+	public void setMalePopulation(double malePopulation) {
+		this.malePopulation = malePopulation;
 	}
 
 	@Override
 	public String toString() {
-		return "Populations [countryId=" + countryId + ", year=" + year + ", sex=" + sex + ", age=" + age
-				+ ", population=" + population + "]";
+		return "Populations [countryId=" + countryId + ", year=" + year + ", age=" + age + ", femalePopulation="
+				+ femalePopulation + ", malePopulation=" + malePopulation + "]";
 	}
-	
-		
-	
+
 }

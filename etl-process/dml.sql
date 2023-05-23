@@ -21,7 +21,7 @@ INTO TABLE populations
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES
-(country_id, year, sex, age, population);
+(country_id, year, age, female_population, male_population);
 
 LOAD DATA LOCAL INFILE 'C:\\Users\\Panos\\Desktop\\clean_economics.csv' 
 INTO TABLE indicators_values

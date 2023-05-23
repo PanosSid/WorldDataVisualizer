@@ -13,37 +13,40 @@ import com.mye030.world_data_visualizer.model.PopulationsId;
 @Repository
 public interface PopulationsRepository  extends JpaRepository<Populations, PopulationsId> {
     
-	@Query("SELECT year, SUM(population)\n"
-			+ "FROM Populations\n"
-			+ "WHERE country_id = :countryId\n"
+	@Query("SELECT year, SUM(femalePopulation + malePopulation) AS total_population "
+			+ "FROM Populations "
+			+ "WHERE country_id = :countryId "
 			+ "GROUP BY year")
-    List<Object[]> getTotalPopulationForCountry(@Param("countryId") int countryId);
-
-    
-    @Query("SELECT FLOOR(year / :aggrYears) * :aggrYears AS start_year, SUM(population)/:aggrYears AS total_population_5yr \n"
+    List<Object[]> getTotalPopulationForCountry(@Param("countryId") int countryId); 
+       
+    @Query("SELECT year, SUM(malePopulation) \n"
     		+ "FROM Populations \n"
-    		+ "WHERE country_id = :countryId\n"
-    		+ "GROUP BY FLOOR(year / :aggrYears)")
-    List<Object[]> getTotalPopulationForCountryByAggregateYears(@Param("countryId") int countryId, @Param("aggrYears") int aggrYears);
+    		+ "WHERE country_id = :countryId \n"
+    		+ "GROUP BY year")
+    List<Object[]> getMalePopulationForCountry(@Param("countryId") int countryId);
     
-    
-    @Query("SELECT year, SUM(population)\n"
-			+ "FROM Populations\n"
-			+ "WHERE country_id = :countryId and sex = :sex\n"
-			+ "GROUP BY year")
-    List<Object[]> getPopulationForCountryAndSex(@Param("countryId") int countryId, @Param("sex") String gender);
-    
-    @Query("SELECT year, SUM(population) \n"
+    @Query("SELECT year, SUM(femalePopulation) \n"
+    		+ "FROM Populations \n"
+    		+ "WHERE country_id = :countryId \n"
+    		+ "GROUP BY year")
+    List<Object[]> getFemalePopulationForCountry(@Param("countryId") int countryId);
+   
+    @Query("SELECT year, SUM(femalePopulation + malePopulation) \n"
     		+ "FROM Populations \n"
     		+ "WHERE country_id = :countryId and age = :age \n"
     		+ "GROUP BY year")
     List<Object[]> getTotalPopulationForCountryAndAge(@Param("countryId") int countryId, @Param("age") int age);
-    
-    
-    @Query("SELECT year, SUM(population) \n"
+     
+    @Query("SELECT year, SUM(malePopulation) \n"
     		+ "FROM Populations \n"
-    		+ "WHERE country_id = :countryId and age = :age and sex = :sex\n"
+    		+ "WHERE country_id = :countryId and age = :age \n"
     		+ "GROUP BY year")
-    List<Object[]> getPopulationForCountryAndAgeAndSex(@Param("countryId") int countryId, @Param("age") int age, @Param("sex") String gender);
-
+    List<Object[]> getMalePopulationForCountryAndAge(@Param("countryId") int countryId, @Param("age") int age);
+    
+    @Query("SELECT year, SUM(femalePopulation) \n"
+    		+ "FROM Populations \n"
+    		+ "WHERE country_id = :countryId and age = :age \n"
+    		+ "GROUP BY year")
+    List<Object[]> getFemalePopulationForCountryAndAge(@Param("countryId") int countryId, @Param("age") int age);
+    
 }

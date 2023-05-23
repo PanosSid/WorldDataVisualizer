@@ -34,9 +34,9 @@ CREATE TABLE `indicators_values` (
 CREATE TABLE `populations` (
   `country_id` int NOT NULL,
   `year` int NOT NULL,
-  `sex` varchar(1) NOT NULL,
   `age` int NOT NULL,
-  `population` int DEFAULT NULL,
-  PRIMARY KEY (`country_id`,`year`,`sex`,`age`)
+  `female_population` int DEFAULT NULL,
+  `male_population` int DEFAULT NULL,
+  PRIMARY KEY (`country_id`,`year`,`age`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
