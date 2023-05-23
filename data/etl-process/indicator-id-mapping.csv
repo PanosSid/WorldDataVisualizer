@@ -1,0 +1,37 @@
+indicator_id,indicator_name
+1,Income Index
+2,Domestic credits
+3,Estimated GNI female
+4,Estimated GNI male
+5,GDP per capita
+6,GDP total
+7,Gross fixed capital formation
+8,GNI per capita
+9,Labour share of GDP
+10,fertility_rate_15_19
+11,fertility_rate_20_24
+12,fertility_rate_25_29
+13,fertility_rate_30_34
+14,fertility_rate_35_39
+15,fertility_rate_40_44
+16,fertility_rate_45_49
+17,total_fertility_rate
+18,gross_reproduction_rate
+19,sex_ratio_at_birth
+20,crude_birth_rate
+21,crude_death_rate
+22,net_migration
+23,rate_natural_increase
+24,growth_rate
+25,infant_mortality
+26,infant_mortality_male
+27,infant_mortality_female
+28,life_expectancy
+29,life_expectancy_male
+30,life_expectancy_female
+31,mortality_rate_under5
+32,mortality_rate_under5_male
+33,mortality_rate_under5_female
+34,mortality_rate_1to4
+35,mortality_rate_1to4_male
+36,mortality_rate_1to4_female

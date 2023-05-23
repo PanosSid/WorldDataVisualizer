@@ -32,6 +32,7 @@ public class ChartDataSets {
 		if (aggr <= 0) {
 			return;
 		}
+		subsetDataForCommonYears();
 		for (ChartData cd : dataList) {
 			cd.aggregateBy(aggr);
 		}

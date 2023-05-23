@@ -69,7 +69,7 @@ public class WorldDataVisualizerController {
 		model.addAttribute("dataGiven", jsonString);
 		model.addAttribute("countries", formData.getCountries());
 		model.addAttribute("indicators", formData.getIndicators());
-		return new ModelAndView("scatterchart2", model);
+		return new ModelAndView("scatterchart", model);
 	}
 	
 }

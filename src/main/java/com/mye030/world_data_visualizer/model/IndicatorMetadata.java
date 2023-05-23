@@ -16,9 +16,6 @@ public class IndicatorMetadata {
 	@Column(name = "name")
 	private String name;
 	
-//	@Column(name = "description")
-//	private String description;
-	
 	public IndicatorMetadata() {}
 	
 	public IndicatorMetadata(int id, String name) {
@@ -47,7 +44,5 @@ public class IndicatorMetadata {
 	public String toString() {
 		return "IndicatorMetadata [id=" + id + ", name=" + name + "]";
 	}
-	
-	
-	
+
 }
