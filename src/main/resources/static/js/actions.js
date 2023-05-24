@@ -76,21 +76,32 @@ $(document).ready(function() {
 				}
 				
 				fetch('/generateChart', {
-					  method: 'POST',
-					  headers: {
-					    'Content-Type': 'application/json'
-					  },
-					  body: JSON.stringify(formData)
-					})
-					.then(response => {
-					  if (!response.ok) {
-					    throw new Error('Network response was not ok');
-					  }
-					  window.location.href = response.url; // Redirect to the new URL
-					})
-					.catch(error => {
-					  console.error('There was an error:', error);
-					});
+					method: 'POST',
+					headers: {'Content-Type': 'application/json'},
+					body: JSON.stringify(formData)
+				}).then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					window.location.href = response.url; // Redirect to the new URL
+				}).catch(error => {
+					console.error('There was an error:', error);
+				});
 				
 			});
+			
+			document.getElementById('countrySelect').addEventListener('change', function() {
+		        indicatorsList = countryIndicatorsMap[this.value];
+				indicatorSelect = document.getElementById('indicatorSelect');
+		        while (indicatorSelect.firstChild) {
+		            indicatorSelect.removeChild(indicatorSelect.firstChild);
+		        } // Clear existing options
+		        for (let i = 0; i < indicatorsList.length; i++) {
+		            option = document.createElement('option');
+		            option.value = indicatorsList[i];
+		            option.text = indicatorsList[i];
+		            indicatorSelect.appendChild(option);
+		        } // Add options from the indicatorsList
+		    });
+			
 		});

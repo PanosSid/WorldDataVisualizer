@@ -1,5 +1,6 @@
 package com.mye030.world_data_visualizer.controller;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -24,9 +25,9 @@ public class WorldDataVisualizerController {
 	
 	@GetMapping("/chartForm")
 	public ModelAndView displayMainView(ModelMap model) {
-		List<String> indicators = appService.getAllIndicatorNames();
-		model.addAttribute("indicators", indicators);
-		List<String> countries = appService.getAllCountryNames();
+//		List<String> indicators = appService.getAllIndicatorNames();
+//		model.addAttribute("indicators", indicators);
+		List<String> countries = Arrays.asList("country1", "country2", "country3"); //appService.getAllCountryNames();
 		model.addAttribute("countries", countries);
 		Map<String, List<String>> countryIndicatorsMap = appService.getCountriesAndTheirIndicators();
 	    model.addAttribute("countryIndicatorsMap", countryIndicatorsMap);

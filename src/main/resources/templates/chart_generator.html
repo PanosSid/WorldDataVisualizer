@@ -26,14 +26,14 @@
 			<div id="pairs">
 				<div class="form-row mb-2">
 					<div class="col">
-						<select class="form-control" name="country">
+						<select class="form-control" id="countrySelect" name="country">
 							<option value="" selected hidden>Country</option>
 							<option th:each="country : ${countries}" th:value="${country}"
 								th:text="${country}"></option>
 						</select>
 					</div>
 					<div class="col">
-						<select class="form-control" name="indicator" >
+						<select class="form-control" id="indicatorSelect" name="indicator" >
 							 <option value="" selected hidden>Indicator</option>
 							<option th:each="indicator : ${indicators}"
 								th:value="${indicator}" th:text="${indicator}"></option>
@@ -78,9 +78,7 @@
 		</form>
 	</div>
 	<script th:inline="javascript">
-	    var indicatorsList = /*[[${indicators}]]*/ [];
 		var countriesList = /*[[${countries}]]*/ [];
 	    var countryIndicatorsMap = /*[[${countryIndicatorsMap}]]*/ '{}';
-	    console.log(countryIndicatorsMap);
 	</script>
 </body>
