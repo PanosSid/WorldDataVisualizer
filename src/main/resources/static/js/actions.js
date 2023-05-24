@@ -1,3 +1,5 @@
+var numberOfPairs = 1;
+
 $(document).ready(function() {
 			
 			$('.addPair').click(function() {
@@ -14,12 +16,12 @@ $(document).ready(function() {
 				'<div id="pairs">'+
 					'<div class="form-row mb-2">'+
 						'<div class="col">'+
-							'<select class="form-control" name="country">'+
+							'<select class="form-control" id=countrySelect' + numberOfPairs + ' name="country">'+
 							countryOptionsHtml+
 							'</select>'+
 						 '</div>' +
 						'<div class="col">'+
-		                	'<select class="form-control" name="indicator">'+
+		                	'<select class="form-control" id=indicatorSelect' + numberOfPairs + ' name="indicator">'+
 		                    	indicatorOptionsHtml+
 		                    '</select>'+
 		                 '</div>'+
@@ -30,6 +32,8 @@ $(document).ready(function() {
 				'</div>';
 
 				$('#pairs').append(pairHtml);
+				
+				numberOfPairs += 1;
 			});
 
 			$(document).on('click', '.removePair', function() {
@@ -90,9 +94,10 @@ $(document).ready(function() {
 				
 			});
 			
-			document.getElementById('countrySelect').addEventListener('change', function() {
+			/*for*/
+			document.getElementById('countrySelect0').addEventListener('change', function() {
 		        indicatorsList = countryIndicatorsMap[this.value];
-				indicatorSelect = document.getElementById('indicatorSelect');
+				indicatorSelect = document.getElementById('indicatorSelect0');
 		        while (indicatorSelect.firstChild) {
 		            indicatorSelect.removeChild(indicatorSelect.firstChild);
 		        } // Clear existing options
