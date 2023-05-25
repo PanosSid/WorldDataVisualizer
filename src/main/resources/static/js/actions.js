@@ -1,8 +1,10 @@
-var numberOfPairs = 1;
+var numberOfPairs = 0;
 
 $(document).ready(function() {
 			
 			$('.addPair').click(function() {
+				
+				numberOfPairs += 1;
 				
 				var indicatorOptionsHtml = '<option value="" selected hidden>Indicator</option>'; 
 				for (let indicator of indicatorsList)
@@ -33,11 +35,25 @@ $(document).ready(function() {
 
 				$('#pairs').append(pairHtml);
 				
-				numberOfPairs += 1;
+				document.getElementById('countrySelect'+numberOfPairs).addEventListener('change', function() {
+			        indicatorsList = countryIndicatorsMap[this.value];
+					let indicatorSelect = document.getElementById('indicatorSelect'+numberOfPairs);
+			        while (indicatorSelect.firstChild) {
+			            indicatorSelect.removeChild(indicatorSelect.firstChild);
+			        } // Clear existing options
+			        for (let i = 0; i < indicatorsList.length; i++) {
+			            option = document.createElement('option');
+			            option.value = indicatorsList[i];
+			            option.text = indicatorsList[i];
+			            indicatorSelect.appendChild(option);
+			        } // Add options from the indicatorsList
+			    });
+				
 			});
 
 			$(document).on('click', '.removePair', function() {
 				$(this).closest('.form-row').remove();
+				numberOfPairs -= 1;
 			});
 
 			$('form').submit(function(event) {
@@ -91,13 +107,12 @@ $(document).ready(function() {
 				}).catch(error => {
 					console.error('There was an error:', error);
 				});
-				
+				console.log(formData);
 			});
 			
-			/*for*/
 			document.getElementById('countrySelect0').addEventListener('change', function() {
 		        indicatorsList = countryIndicatorsMap[this.value];
-				indicatorSelect = document.getElementById('indicatorSelect0');
+				let indicatorSelect = document.getElementById('indicatorSelect0');
 		        while (indicatorSelect.firstChild) {
 		            indicatorSelect.removeChild(indicatorSelect.firstChild);
 		        } // Clear existing options
