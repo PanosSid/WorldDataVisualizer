@@ -32,10 +32,13 @@
 
 <body>
  <h1>Bar Chart</h1>
+
 	<div id="chart-container" ></div>
 	
 	<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
 			th:value="${dataGiven}" />
+
+	<a th:href="@{/chartForm}">Back to chart form</a>
 			
  <script th:inline="javascript">
   

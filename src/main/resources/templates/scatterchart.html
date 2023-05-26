@@ -18,12 +18,13 @@
 </head>
 <body>
   <h1>Scatter Chart </h1>
+
   <div id="chart-container" ></div>
-    <!-- <svg id="chart"></svg> -->
-    
 		
 		<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
 			th:value="${dataGiven}" />
+
+		<a th:href="@{/chartForm}">Back to chart form</a>
 	
      <script th:inline="javascript">
     
