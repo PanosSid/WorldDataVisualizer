@@ -1,5 +1,5 @@
 # World Data Visualizer
-Word Data Visualizer is a web application visualizes data of countries' demographic and economic indicators through various types of charts.
+Word Data Visualizer is a web application that visualizes data of countries' demographic and economic indicators through various types of charts.
 Developed by [@PanosSid](https://github.com/PanosSid) and [@zezosarg](https://github.com/zezosarg) during the [Advanced Topics of Database Technology and Applications](https://www.cs.uoi.gr/course/advanced-topics-of-database-technology-and-applications/?lang=en) course [@cse.uoi.gr](https://www.cs.uoi.gr/)
 
 
