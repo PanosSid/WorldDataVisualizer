@@ -18,9 +18,9 @@ Users can:
 
 ## Technologies
 This section contains a brief overview of the technologies used:
-*    Programming Language: Java
-*    Framework: Spring Boot
+*    Back End: Java, Spring Boot and Thymeleaf
+*    ETL: Python, Pandas    
 *    DBMS: MySQL 
-*    Front End: HTML, Bootstrap and Thymeleaf 
+*    Front End: HTML, Bootstrap
 *    Charts: D3.js, JavaScript
 *    IDE: Eclipse
