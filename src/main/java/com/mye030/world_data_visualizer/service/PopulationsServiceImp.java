@@ -2,6 +2,7 @@ package com.mye030.world_data_visualizer.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +47,7 @@ public class PopulationsServiceImp implements PopulationService {
 		List<String> populationsIndicators = new ArrayList<String>();
 		populationsIndicators.addAll(allAgesPopulationIndicators);
 		populationsIndicators.addAll(indicatorAgeMap.keySet());
+		Collections.sort(populationsIndicators);
 		return populationsIndicators;
 	}
 	

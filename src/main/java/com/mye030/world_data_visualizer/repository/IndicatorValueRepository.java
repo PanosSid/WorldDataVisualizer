@@ -15,4 +15,13 @@ public interface IndicatorValueRepository extends JpaRepository<IndicatorValue, 
 	
 	@Query("SELECT iv.year, iv.value FROM IndicatorValue iv WHERE iv.countryId = :countryId AND iv.indicatorId = :indicatorId")
     List<Object[]> findYearsAndValuesByCountryAndIndicator(@Param("countryId") int countryId, @Param("indicatorId") int indicatorId);
+    
+    @Query(value = "SELECT c.name AS countryName, i.name AS indicatorName " +
+            "FROM countries AS c, " +
+            "	(SELECT DISTINCT indicator_id, country_id FROM indicators_values) AS q, " +
+            "	indicators AS i " +
+            "WHERE q.country_id = c.id AND i.id = q.indicator_id "+
+            "ORDER BY countryName, indicatorName",
+            nativeQuery = true)
+    List<Object[]> findAllIndicatorsPerCountry();
 }

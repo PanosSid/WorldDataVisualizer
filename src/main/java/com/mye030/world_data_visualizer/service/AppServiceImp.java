@@ -1,9 +1,6 @@
 package com.mye030.world_data_visualizer.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -12,35 +9,18 @@ import org.springframework.stereotype.Service;
 
 import com.mye030.world_data_visualizer.model.ChartData;
 import com.mye030.world_data_visualizer.model.ChartDataSets;
-import com.mye030.world_data_visualizer.repository.CountryMetadataRepository;
+
 
 @Service
 public class AppServiceImp implements AppService {
 
 	@Autowired
-	private CountryMetadataRepository countryRepo;
-	
-	@Autowired
 	private PopulationService populationsService;
 	
 	@Autowired
-	private IndicatorValuesService indicatorValuesService; 
-	
-	@Override
-	public List<String> getAllIndicatorNames() {	
-		List<String> list = new ArrayList<String>(); 
-		list.addAll(indicatorValuesService.getAllIndicatorsNames());
-		list.addAll(populationsService.getAllPopulationsIndicators());
-		Collections.sort(list);
-		return list;
-	}
+	private IndicatorValuesService indicatorValuesService;
 
-	@Override
-	public List<String> getAllCountryNames() {
-		List<String> list = countryRepo.findAllNames(); 
-		Collections.sort(list);
-		return list;
-	}
+	private Map<String, List<String>> countryIndicatorsMap;
 	
 	@Override
 	public String getDataForScatterChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {	
@@ -91,12 +71,17 @@ public class AppServiceImp implements AppService {
 	}
 
 	@Override
-	public Map<String, List<String>> getCountriesAndTheirIndicators() {
-		Map<String, List<String>> map = new HashMap<>();
-		map.put("country1", Arrays.asList("indicator1"));
-		map.put("country2", Arrays.asList("indicator1", "indicator2"));
-		map.put("country3", Arrays.asList("indicator1", "indicator2","indicator3" ));
-		return map;
+	public Map<String, List<String>> getCountriesAndTheirIndicators() {	
+		if (countryIndicatorsMap != null) {
+			return countryIndicatorsMap;
+		}
+		countryIndicatorsMap = indicatorValuesService.getAllIndicatorsPerCountry();
+		// every country has data in populations table so add all population indicators to each one of them 
+		List<String> populationIndicators = populationsService.getAllPopulationsIndicators();
+		for (String country : countryIndicatorsMap.keySet()) {
+			countryIndicatorsMap.get(country).addAll(populationIndicators);
+		}		
+		return countryIndicatorsMap;
 	}
 	
 }

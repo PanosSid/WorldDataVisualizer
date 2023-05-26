@@ -5,10 +5,6 @@ import java.util.Map;
 
 public interface AppService {
 	
-	List<String> getAllIndicatorNames();
-	
-	List<String> getAllCountryNames();
-	
 	Map<String, List<String>> getCountriesAndTheirIndicators();
 	
 	String getDataForLineChart(List<String> countries, List<String> indicators, int aggr, int minYear, int maxYear);
