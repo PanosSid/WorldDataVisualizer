@@ -3,6 +3,7 @@
 <head>
   <title>Line Chart</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     /* Add some styling to the chart container */
     #chart-container {
@@ -53,10 +54,8 @@
 	
 	<input type="hidden" id="vrblId" name="vrblName" value="placeholder"
 			th:value="${dataGiven}" />
-	
-	
-  <!-- Include D3.js library -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+	<a th:href="@{/chartForm}">Back to chart form</a>
   
  <script th:inline="javascript">
   
