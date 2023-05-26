@@ -9,7 +9,6 @@ def cleanMidyearPopulationAgeSex(cleandFilesPath):
     fileName = "midyear_population_age_sex"
     pivot_df = pd.read_csv(cleandFilesPath+'\cleaned_countries.csv')
     pivot_df = pivot_df[["ISO_Code", "FIPS"]]
-    # indicator_ids_df = pd.read_csv("indicator-id-mapping.csv")
     print("Cleaning: midyear_population_age_sex.csv")
     df = pd.read_csv("extracted-data\\"+fileName+".csv", encoding="UTF8")
 
@@ -37,8 +36,6 @@ def cleanMidyearPopulationAgeSex(cleandFilesPath):
 
     
     pivoted.to_csv(cleandFilesPath+"\clean_midyear_population_age_sex.csv", index=False)
-
-    # df.to_csv(cleandFilesPath+"\clean_midyear_population_age_sex.csv", index=False)
     print("--- Cleaning Completed ---")
 
 

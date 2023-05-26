@@ -7,9 +7,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mye030.world_data_visualizer.model.ChartData;
-import com.mye030.world_data_visualizer.model.ChartDataSets;
-
 
 @Service
 public class AppServiceImp implements AppService {

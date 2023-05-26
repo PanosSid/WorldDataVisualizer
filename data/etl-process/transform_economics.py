@@ -18,8 +18,7 @@ def aggregatePer5Years(df):
             break
     consecutiveColumns = numericColumns[sublistIndex:]
     columnsGroupsPer5 = [consecutiveColumns[i:i+5] for i in range(0, len(consecutiveColumns), 5)]
-    # print(columns)
-    # print(columnsGroupsPer5)
+
 
     for group in columnsGroupsPer5:
         df[group[-1]] = df[group].mean(axis=1).round(1)
@@ -46,7 +45,6 @@ def formatCleanDataSetFileName(cleandFilesPath, name):
     return cleandFilesPath+"\clean_"+name.lower().replace(' ', '_')+".csv"
 
 def cleanEconomics(cleandFilesPath):
-    # pivot_df = pd.read_csv("tmp_files\\tmp_countries.csv")
     pivot_df = pd.read_csv(cleandFilesPath+'\cleaned_countries.csv')
     
     pivot_df = pivot_df[["Official_Name", "ISO_Code"]]
@@ -74,7 +72,6 @@ def cleanEconomics(cleandFilesPath):
         df = pd.merge(df, indicator_ids_df, left_on = "indicator_name", right_on = "indicator_name")
         df = df[['country_id', 'year', 'indicator_id', 'indicator_value']]
         economics_df = pd.concat([economics_df, df])
-        # print(economics_df)
     economics_df.to_csv(formatCleanDataSetFileName(cleandFilesPath, "economics"), index=False)
     print("--- Clean Completed ---")
 

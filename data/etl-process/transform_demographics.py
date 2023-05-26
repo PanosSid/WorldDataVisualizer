@@ -16,7 +16,6 @@ demographicsCSVNames = [
 ]
 
 def cleanDemographics(cleandFilesPath):
-    # pivot_df = pd.read_csv("tmp_files\\tmp_countries.csv")
     pivot_df = pd.read_csv(cleandFilesPath+'\cleaned_countries.csv')
     pivot_df = pivot_df[["ISO_Code", "FIPS"]]
     indicator_ids_df = pd.read_csv("indicator-id-mapping.csv")
@@ -31,9 +30,7 @@ def cleanDemographics(cleandFilesPath):
         df = df.drop(['indicator_name'], axis=1)
         df.rename(columns = {'ISO_Code':'country_id'}, inplace = True)
         df = df[['country_id', 'year', 'indicator_id', 'indicator_value']]
-        # print(df)
         df.to_csv(formatCleanDataSetFileName(cleandFilesPath, fileName), index=False)
-        # print(df["country_id"].nunique())
     print("--- Clean Completed ---")
 
 

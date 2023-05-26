@@ -1,4 +1,4 @@
-package com.mye030.world_data_visualizer.model;
+package com.mye030.world_data_visualizer.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
