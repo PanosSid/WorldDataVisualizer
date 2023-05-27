@@ -3,24 +3,19 @@ package com.mye030.world_data_visualizer.service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class ChartDataSets {
-	private String chartType;
 	private List<ChartData> dataList;
 	
 	public ChartDataSets() {
-		this.chartType = "";
-		dataList = new ArrayList<ChartData>();
-	}
-	
-	public ChartDataSets(String chartType) {
-		this.chartType = chartType;
 		dataList = new ArrayList<ChartData>();
 	}
 	
@@ -32,7 +27,6 @@ public class ChartDataSets {
 		if (aggr <= 0) {
 			return;
 		}
-		subsetDataForCommonYears();
 		for (ChartData cd : dataList) {
 			cd.aggregateBy(aggr);
 		}
@@ -103,19 +97,18 @@ public class ChartDataSets {
         });
 	}
 
-	public String convertToScatterChartJSONStr() {
-		Map<String, List<ChartData>> map = new HashMap<>();
-		for (ChartData cd : dataList) {
-			map.put(cd.getCountryName(), new ArrayList<ChartData>());
-		}
-		for (ChartData cd : dataList) {
-			List<ChartData> list = map.get(cd.getCountryName());
-			if (list.size () < 2) {
-				list.add(cd);				
-			} else {
-				throw new RuntimeException("Scatter plot more than 2 data with the country name");
+	public String convertToScatterChartJSONStr(List<String> countryNames, List<String> indicatorNames) {
+		SortedSet<String> countries = new TreeSet<String>(countryNames);
+		SortedSet<String> indicators = new TreeSet<String>(indicatorNames);
+		Map<String, List<ChartData>> map = new LinkedHashMap<>();
+		for (String country: countries) {
+			List<ChartData> list = new ArrayList<ChartData>();
+			for (String indicator : indicators) {
+				list.add(getChartDataByCountryAndIndicator(country, indicator));
 			}
+			map.put(country, list);				
 		}
+
 		JSONArray outerArray = new JSONArray();	
 		for (String countryName : map.keySet()) {
 			List<Number> xValues = map.get(countryName).get(0).getValues();
@@ -130,6 +123,15 @@ public class ChartDataSets {
 			outerArray.put(array);
 		}
 		return outerArray.toString();
+	}
+	
+	private ChartData getChartDataByCountryAndIndicator(String country, String indicator) {
+		for (ChartData cd : dataList) {
+			if (cd.getCountryName().equals(country) && cd.getIndicatorName().equals(indicator)) {
+				return cd;
+			}
+		}
+		throw new RuntimeException("ChartDataSets doesnt contain data for country: "+ country +" indicator: "+indicator);
 	}
 
 	public String convertListsOfNumsToJSONStr(List<Number> xValues, List<Number> yValues) {

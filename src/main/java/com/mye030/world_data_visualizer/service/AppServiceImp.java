@@ -25,13 +25,16 @@ public class AppServiceImp implements AppService {
 		datasets.filter(start, end);
 		datasets.subsetDataForCommonYears();
 		datasets.aggregateBy(aggr);
-		return datasets.convertToScatterChartJSONStr();
+		System.out.println(countryNames);
+		System.out.println(indicatorNames);	
+		return datasets.convertToScatterChartJSONStr( countryNames,  indicatorNames);
 	}
 
 	@Override
 	public String getDataForBarChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
 		ChartDataSets datasets = getChartDataSets(countryNames, indicatorNames);
 		datasets.filter(start, end);
+		datasets.subsetDataForCommonYears();
 		datasets.aggregateBy(aggr);
 		return datasets.convertToBarChartJSONStr();
 	}
@@ -40,6 +43,7 @@ public class AppServiceImp implements AppService {
 	public String getDataForLineChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {
 		ChartDataSets datasets = getChartDataSets(countryNames, indicatorNames);
 		datasets.filter(start, end);
+		datasets.subsetDataForCommonYears();
 		datasets.aggregateBy(aggr);
 		return datasets.convertToJSONStr();
 	}

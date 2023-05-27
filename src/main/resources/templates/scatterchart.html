@@ -29,9 +29,12 @@
     
     var indicatorsList = /*[[${indicators}]]*/ [];
 	var countriesList = /*[[${countries}]]*/ [];  
-    indicatorsList = removeDuplicates(indicatorsList);
+	indicatorsList = removeDuplicates(indicatorsList);
+    countriesList = removeDuplicates(countriesList);
+    indicatorsList.sort();
+    countriesList.sort();
     console.log(indicatorsList);
-    var legendLabels = removeDuplicates(countriesList);
+    var legendLabels = countriesList;
     console.log("legendLabels:", legendLabels);
 	  const passedDataC = document.getElementById('vrblId').value; 
       

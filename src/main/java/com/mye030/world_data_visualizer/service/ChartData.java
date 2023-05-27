@@ -25,6 +25,10 @@ public class ChartData {
 		}
 	}
 	
+	public String getIndicatorName() {
+		return indicatorName;
+	}
+	
 	public String getCountryName() {
 		return countryName;
 	}
@@ -134,5 +138,13 @@ public class ChartData {
 		obj.put("value", yearsAndValues.get(year));
 		return obj;
 	}
+
+	@Override
+	public String toString() {
+		return "ChartData [countryName=" + countryName + ", indicatorName=" + indicatorName + ", yearsAndValues="
+				+ yearsAndValues + "]";
+	}
+
+
 
 }
