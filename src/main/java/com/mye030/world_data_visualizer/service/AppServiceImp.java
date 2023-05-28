@@ -20,14 +20,26 @@ public class AppServiceImp implements AppService {
 	private Map<String, List<String>> countryIndicatorsMap;
 	
 	@Override
+	public Map<String, List<String>> getCountriesAndTheirIndicators() {	
+		if (countryIndicatorsMap != null) {
+			return countryIndicatorsMap;
+		}
+		countryIndicatorsMap = indicatorValuesService.getAllIndicatorsPerCountry();
+		// every country has data in populations table so add all population indicators to each one of them 
+		List<String> populationIndicators = populationsService.getAllPopulationsIndicators();
+		for (String country : countryIndicatorsMap.keySet()) {
+			countryIndicatorsMap.get(country).addAll(populationIndicators);
+		}		
+		return countryIndicatorsMap;
+	}
+	
+	@Override
 	public String getDataForScatterChart(List<String> countryNames, List<String> indicatorNames, int aggr, int start, int end) {	
 		ChartDataSets datasets = getChartDataSets(countryNames, indicatorNames);
 		datasets.filter(start, end);
 		datasets.subsetDataForCommonYears();
 		datasets.aggregateBy(aggr);
-		System.out.println(countryNames);
-		System.out.println(indicatorNames);	
-		return datasets.convertToScatterChartJSONStr( countryNames,  indicatorNames);
+		return datasets.convertToScatterChartJSONStr(countryNames, indicatorNames);
 	}
 
 	@Override
@@ -69,20 +81,6 @@ public class AppServiceImp implements AppService {
 			throw new DataNotFoundException(countryName, indicatorName);
 		}
 		return new ChartData(countryName, indicatorName, yearsAndValues);
-	}
-
-	@Override
-	public Map<String, List<String>> getCountriesAndTheirIndicators() {	
-		if (countryIndicatorsMap != null) {
-			return countryIndicatorsMap;
-		}
-		countryIndicatorsMap = indicatorValuesService.getAllIndicatorsPerCountry();
-		// every country has data in populations table so add all population indicators to each one of them 
-		List<String> populationIndicators = populationsService.getAllPopulationsIndicators();
-		for (String country : countryIndicatorsMap.keySet()) {
-			countryIndicatorsMap.get(country).addAll(populationIndicators);
-		}		
-		return countryIndicatorsMap;
 	}
 	
 }
